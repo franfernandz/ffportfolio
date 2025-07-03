@@ -1,0 +1,395 @@
+/* --- CSS VARIABLES & GLOBAL STYLES --- */
+:root {
+    --off-black: #1E2019;
+    --off-white: #EDF2EF;
+    --font-sans: 'Inter', sans-serif;
+    --font-serif: 'Lora', serif;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth; /* Fallback for browsers without JS */
+}
+
+body {
+    background-color: var(--off-white);
+    color: var(--off-black);
+    font-family: var(--font-sans);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* --- TYPOGRAPHY --- */
+h1, h2, h3 {
+    line-height: 1.2;
+    font-weight: 600;
+}
+
+.section-title {
+    font-family: var(--font-serif);
+    font-size: clamp(2rem, 5vw, 3rem);
+    margin-bottom: 2rem;
+    text-align: center;
+    opacity: 0; /* For GSAP animation */
+}
+
+a {
+    color: var(--off-black);
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+}
+
+a:hover {
+    opacity: 0.7;
+}
+
+/* --- LAYOUT & CONTAINERS --- */
+.content-section {
+    max-width: 800px;
+    max-height: 100vh;
+    margin: 0 auto;
+    padding: 6rem 1.5rem;
+}
+
+/* --- HEADER & NAVIGATION --- */
+.main-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    z-index: 1000;
+    background-color: var(--off-white);
+    border-bottom: 1px solid var(--off-black);
+}
+
+.logo a {
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+.desktop-nav {
+    display: none; /* Hidden on mobile */
+}
+
+.desktop-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.mobile-nav-toggle {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1001;
+}
+.hamburger-line {
+    width: 25px;
+    height: 2px;
+    background-color: var(--off-black);
+}
+
+.mobile-nav-container {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--off-black);
+    color: var(--off-white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(100%); /* Initially hidden */
+    z-index: 999;
+}
+
+.mobile-nav-container nav ul {
+    list-style: none;
+    text-align: center;
+}
+
+.mobile-nav-container nav li {
+    margin: 2rem 0;
+}
+
+.mobile-nav-container nav a {
+    color: var(--off-white);
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+/* --- BUTTONS & CTAS --- */
+.btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background-color: var(--off-black);
+    color: var(--off-white);
+    font-family: var(--font-sans);
+    font-weight: 500;
+    border: 1px solid var(--off-black);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.btn:hover {
+    background-color: transparent;
+    color: var(--off-black);
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: var(--off-black);
+}
+.btn-outline:hover {
+    background-color: var(--off-black);
+    color: var(--off-white);
+}
+
+.link-arrow {
+    font-weight: 500;
+    display: inline-block;
+    margin-top: 1rem;
+}
+
+/* --- HOME SECTION --- */
+.home-section {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    text-align: center;
+    padding: 1.5rem;
+}
+
+.home-content h1 {
+    font-family: var(--font-sans);
+    font-size: clamp(3rem, 10vw, 6rem);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+}
+
+.home-subheading {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: clamp(1.2rem, 4vw, 1.75rem);
+    margin: 1rem 0 2rem;
+    color: #4b4f46;
+}
+
+.cta-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+/* --- PORTFOLIO SECTION --- */
+.portfolio-section {
+    margin-top: 2rem;
+    width: 100%;
+    background-color: var(--off-white);
+}
+.portfolio-card {
+    display: flex;
+    flex-direction: column;
+    opacity: 1; /* For GSAP animation */
+}
+.portfolio-card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    display: block;
+    transition: all .2s ease-in-out;
+    border-radius: 20px;
+}
+.portfolio-card img:hover {
+    opacity: .3;
+}
+.card-content {
+    padding: 2.5rem 1.5rem;
+}
+.card-content h3 {
+    font-family: var(--font-sans);
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+}
+.card-content p {
+    max-width: 600px;
+}
+
+/* --- ABOUT SECTION --- */
+.about-content p {
+    margin-bottom: 1.5rem;
+    font-size: 1.125rem;
+}
+.about-content p:last-child {
+    margin-bottom: 0;
+}
+
+/* --- NEWSLETTER SECTION --- */
+.newsletter-section {
+    margin-top: 5rem;
+    text-align: center;
+    background-color: var(--off-black);
+    color: var(--off-white);
+}
+
+.newsletter-section .section-title {
+    color: var(--off-white);
+}
+
+.newsletter-section p {
+    margin-bottom: 2rem;
+    font-size: 1.125rem;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.newsletter-section .btn {
+    background-color: var(--off-white);
+    color: var(--off-black);
+    border-color: var(--off-white);
+}
+.newsletter-section .btn:hover {
+    background-color: transparent;
+    color: var(--off-white);
+}
+
+/* --- CONTACT FORM --- */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    margin-bottom: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    border: 1px solid var(--off-black);
+    background-color: transparent;
+    border-radius: 0;
+    -webkit-appearance: none;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: 2px solid var(--off-black);
+    outline-offset: 2px;
+}
+
+/* --- FOOTER --- */
+.main-footer-container {
+    background-color: var(--off-white);
+    padding: 3rem 1.5rem;
+    border-top: 1px solid var(--off-black);
+}
+
+.footer-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    text-align: center;
+}
+
+.footer-col {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.footer-col .icon {
+    stroke: var(--off-black);
+}
+
+.footer-nav a {
+    margin: 0 0.5rem;
+}
+
+/* --- GSAP Initial States (for animations) --- */
+.anim-hero-title, .anim-hero-subtitle, .anim-hero-cta {
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+/* --- RESPONSIVE STYLES (Desktop and larger) --- */
+@media (min-width: 768px) {
+    .desktop-nav {
+        display: block;
+    }
+    .mobile-nav-toggle {
+        display: none;
+    }
+    .main-header {
+        padding: 1.5rem 3rem;
+    }
+    .content-section {
+        padding: 8rem 2rem;
+    }
+    .portfolio-card {
+        flex-direction: row;
+        align-items: stretch;
+    }
+    .portfolio-card:nth-child(even) {
+        flex-direction: row-reverse;
+    }
+    .portfolio-card img {
+        width: 50%;
+        height: auto;
+    }
+    .card-content {
+        width: 50%;
+        padding: 5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .footer-grid {
+        grid-template-columns: repeat(3, 1fr);
+        text-align: left;
+    }
+    .footer-col {
+        align-items: flex-start;
+    }
+    .footer-col:nth-child(2) {
+        align-items: center;
+    }
+    .footer-col:nth-child(3) {
+        flex-direction: row;
+        justify-content: flex-end;
+    }
+}
