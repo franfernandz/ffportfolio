@@ -113,7 +113,8 @@ Web designer since 1999, I oriented my career towards UX/UI design and, since 20
         <!-- Contact Section -->
         <section id="contact" class="contact-section content-section">
             <h2 class="section-title">Let's Connect</h2>
-            <form action="#" method="POST" class="contact-form">
+            <form action="#" method="POST" class="contact-form" data-netlify="true">
+                <input type="hidden" name="form-name" value="contact">
                 <div class="form-group">
                     <label for="full-name">Full Name</label>
                     <input type="text" id="full-name" name="full-name" required>
