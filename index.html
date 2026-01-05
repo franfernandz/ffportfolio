@@ -1,21 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Francisco Fernández | Portfolio</title>
-    
+
     <!-- SEO & Accessibility -->
-    <meta name="description" content="Portfolio of Francisco Fernández, a Product Designer, UX Designer, and Web Designer.">
-    
-    <!-- Google Fonts: Inter (Sans-Serif) & Lora (Serif) -->
+    <meta name="description"
+        content="Portfolio of Francisco Fernández, a Product Designer, UX Designer, and Web Designer.">
+
+    <!-- Google Fonts: Urbanist (Sans-Serif) & Lora (Serif) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap"
+        rel="stylesheet">
+
     <!-- Stylesheet -->
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
     <!-- Header & Desktop Navigation -->
@@ -32,7 +37,8 @@
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
-        <button class="mobile-nav-toggle" aria-label="Open navigation menu" aria-controls="mobile-nav" aria-expanded="false">
+        <button class="mobile-nav-toggle" aria-label="Open navigation menu" aria-controls="mobile-nav"
+            aria-expanded="false">
             <div class="hamburger-line"></div>
             <div class="hamburger-line"></div>
         </button>
@@ -56,10 +62,11 @@
         <section id="home" class="home-section">
             <div class="home-content">
                 <h1 class="anim-hero-title">Francisco Fernández</h1>
-                <p class="home-subheading anim-hero-subtitle">product designer / ux designer / web designer.</p>
+                <p class="home-subheading anim-hero-subtitle">Product Designer & Web Developer</p>
                 <div class="cta-container anim-hero-cta">
                     <a href="./docs/FERNANDEZFRANCISCO_CV(Eng).pdf" class="btn">Download CV <span>🇬🇧</span></a>
-                    <a href="./docs/FERNANDEZ_FRANCISCO_CV(Esp).pdf" class="btn btn-outline">Download CV <span>🇦🇷</span></a>
+                    <a href="./docs/FERNANDEZ_FRANCISCO_CV(Esp).pdf" class="btn btn-outline">Download CV
+                        <span>🇦🇷</span></a>
                 </div>
             </div>
         </section>
@@ -68,29 +75,63 @@
         <section id="portfolio" class="portfolio-section">
             <h2 class="section-title">Portfolio</h2>
             <article class="portfolio-card">
-                <img src="./img/project_cover_patagonia.png" alt="A dashboard with charts and graphs.">
+                <a href="serviapp.html" target="_blank">
+                    <img src="./img/project_cover_serviapp.png" alt="ServiApp project showcase">
+                </a>
+                <div class="card-content">
+                    <h3>ServiApp - UI design</h3>
+                    <p>End-to-end UI design for a home services platform, bridging the gap between professionals and
+                        homeowners</p>
+                    <a href="serviapp.html" class="link-arrow" target="_blank">View Case Study →</a>
+                </div>
+            </article>
+            <article class="portfolio-card">
+                <a href="musindr.html" target="_blank">
+                    <img src="./img/project_cover_musindr.png" alt="Musinder project showcase">
+                </a>
+                <div class="card-content">
+                    <h3>Musindr - UX/UI design</h3>
+                    <p>Designing a specialized networking app for musicians to connect, collaborate, and build creative
+                        communities</p>
+                    <a href="musindr.html" class="link-arrow" target="_blank">View Case Study →</a>
+                </div>
+            </article>
+            <article class="portfolio-card">
+                <a href="bankapp.html" target="_blank">
+                    <img src="./img/project_cover_patagonia.png" alt="Bank App redesign project showcase">
+                </a>
                 <div class="card-content">
                     <h3>Banco Patagonia - Online Banking (desktop) redesign</h3>
-                    <p>Complete redesign of the home banking experience, focusing on accessibility, visual hierarchy, and a minimal learning curve</p>
-                    <a href="https://www.notion.so/Banco-Patagonia-UX-UI-Redesign-Case-Study-21c55fe117a88091b221cd3ba7472fed" class="link-arrow" target="_blank">View Case Study →</a>
+                    <p>Optimizing digital banking through a UI redesign focused on accessibility and streamlined
+                        financial transactions</p>
+                    <a href="bankapp.html" class="link-arrow" target="_blank">View Case Study →</a>
                 </div>
             </article>
             <article class="portfolio-card">
-                <img src="./img/project_cover_carrefour.png" alt="People collaborating around a table with laptops.">
+                <a href="buyinapp.html" target="_blank">
+                    <img src="./img/project_cover_carrefour.png" alt="Buy-in-app feature project showcase">
+                </a>
                 <div class="card-content">
                     <h3>Mi Carrefour – Buy-in-app Feature</h3>
-                    <p>Prototype of in-app scanning and payment functionality, designed to reduce lines and improve the in-store experience</p>
-                    <a href="https://www.notion.so/Scan-Buy-Concept-Feature-for-Mi-Carrefour-21c55fe117a880e2842ac0ab5a64bbd8" class="link-arrow" target="_blank">View Case Study →</a>
+                    <p>Enhancing user retention by designing a seamless new feature for a large-scale retail e-commerce
+                        app</p>
+                    <a href="buyinapp.html" class="link-arrow" target="_blank">View Case Study →</a>
                 </div>
             </article>
-            <article class="portfolio-card">
-                <img src="./img/project_cover_dashboard.png" alt="A clean workspace with a laptop, notebook, and coffee.">
+            <!-- <article class="portfolio-card">
+                <a href="https://www.notion.so/Institutional-Dashboard-UX-UI-Design-Case-Study-21c55fe117a880a68d76d0ad383e0cd6"
+                    target="_blank">
+                    <img src="./img/project_cover_dashboard.png"
+                        alt="A clean workspace with a laptop, notebook, and coffee.">
+                </a>
                 <div class="card-content">
                     <h3>Institutional Dashboard</h3>
-                    <p>Design of a centralized dashboard to streamline access to internal tools, optimizing time and user experience</p>
-                    <a href="https://www.notion.so/Institutional-Dashboard-UX-UI-Design-Case-Study-21c55fe117a880a68d76d0ad383e0cd6" class="link-arrow" target="_blank">View Case Study →</a>
+                    <p>Architecting a high-density data dashboard to simplify complex administrative workflows and
+                        decision-making</p>
+                    <a href="https://www.notion.so/Institutional-Dashboard-UX-UI-Design-Case-Study-21c55fe117a880a68d76d0ad383e0cd6"
+                        class="link-arrow" target="_blank">View Case Study →</a>
                 </div>
-            </article>
+            </article> -->
         </section>
 
         <!-- About Section -->
@@ -98,16 +139,30 @@
             <h2 class="section-title">About Me</h2>
             <div class="about-content">
                 <p>
-Web designer since 1999, I oriented my career towards UX/UI design and, since 2017, I have dedicated myself to the full development of solutions (idea, research, design, development and implementation), making decisions about the product seeking to achieve user satisfaction.</p>
-                <p>I work collaboratively with both designers and developers, devising the best processes for each project and component.</p>
+                <h3>Turning complex workflows into seamless user experiences</h3>
+                </p>
+                <p>My journey in the tech industry began with the building blocks of the web: HTML and CSS. As digital
+                    products evolved, so did my toolkit—from crafting interactive experiences in Flash and logic-heavy
+                    applications in PHP, to my current focus on high-fidelity UX/UI Design and AI-driven workflows.</p>
+                <p>For the past 8 years as a Lead Web Developer and UX/UI Designer at INAES, I have specialized in
+                    transforming complex professional management systems into intuitive, user-centered platforms. This
+                    long-term evolution has given me a rare advantage: I design with an engineer’s mindset. I understand
+                    the 'under the hood' constraints of every pixel I place, ensuring that my designs are not only
+                    beautiful but scalable and technically viable.</p>
+                <p>I am a firm believer in continuous adaptation. Today, I integrate Artificial Intelligence into my
+                    design process to accelerate discovery, simulate user behaviors, and prototype at high speed. I
+                    thrive in fast-paced environments where grit, technical depth, and a passion for great products are
+                    the keys to success.</p>
             </div>
         </section>
-        
+
         <!-- Newsletter Section -->
         <section id="newsletter" class="newsletter-section content-section">
             <h2 class="section-title">La vié en web </h2>
-            <p>Once a week I write about product design, UX, and everything that I found interesting about making (and living in) internet. No spam and completely free (but in Spanish for now).</p>
-            <a href="https://lavieenweb.substack.com/subscribe?utm_source=subscribe_content_block&simple=true&next=https%3A%2F%2Flavieenweb.substack.com%2F" class="btn" target="_blank">Subscribe to my newsletter</a>
+            <p>Once a week I write about product design, UX, and everything that I found interesting about making (and
+                living in) internet. No spam and completely free (but in Spanish for now).</p>
+            <a href="https://lavieenweb.substack.com/subscribe?utm_source=subscribe_content_block&simple=true&next=https%3A%2F%2Flavieenweb.substack.com%2F"
+                class="btn" target="_blank">Subscribe to my newsletter</a>
         </section>
 
         <!-- Contact Section -->
@@ -123,7 +178,7 @@ Web designer since 1999, I oriented my career towards UX/UI design and, since 20
                     <label for="email">Email</label>
                     <input type="email" id="email" name="email" required>
                 </div>
-                 <div class="form-group">
+                <div class="form-group">
                     <label for="subject">Subject</label>
                     <input type="text" id="subject" name="subject" required>
                 </div>
@@ -140,7 +195,9 @@ Web designer since 1999, I oriented my career towards UX/UI design and, since 20
     <footer class="main-footer-container">
         <div class="footer-grid">
             <div class="footer-col">
-                <p>© 2025 Francisco Fernández</p>
+                <p>©
+                    <script>document.write(new Date().getFullYear());</script> Francisco Fernández
+                </p>
             </div>
             <div class="footer-col">
                 <nav class="footer-nav">
@@ -150,9 +207,17 @@ Web designer since 1999, I oriented my career towards UX/UI design and, since 20
                 </nav>
             </div>
             <div class="footer-col">
-                <a href="https://lavieenweb.substack.com/subscribe?utm_source=subscribe_content_block&simple=true&next=https%3A%2F%2Flavieenweb.substack.com%2F" target="_blank">Subscribe to my newsletter</a>
-                <a href="https://instagram.com/mrnandz_wd" target="_blank" rel="noopener noreferrer" aria-label="Instagram Profile">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                <a href="https://lavieenweb.substack.com/subscribe?utm_source=subscribe_content_block&simple=true&next=https%3A%2F%2Flavieenweb.substack.com%2F"
+                    target="_blank">Subscribe to my newsletter</a>
+                <a href="https://instagram.com/mrnandz_wd" target="_blank" rel="noopener noreferrer"
+                    aria-label="Instagram Profile">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="icon">
+                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                    </svg>
                 </a>
             </div>
         </div>
@@ -162,9 +227,10 @@ Web designer since 1999, I oriented my career towards UX/UI design and, since 20
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
-    
+
     <!-- Custom Script -->
     <script src="script.js"></script>
 
 </body>
+
 </html>

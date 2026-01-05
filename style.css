@@ -2,8 +2,44 @@
 :root {
     --off-black: #1E2019;
     --off-white: #EDF2EF;
-    --font-sans: 'Inter', sans-serif;
+    --font-sans: 'Urbanist', sans-serif;
     --font-serif: 'Lora', serif;
+
+    /* Typography - Urbanist */
+    --urbanist-h1: 700 2.25rem 'Urbanist', sans-serif;
+    /* 36px */
+    --urbanist-h2: 700 2rem 'Urbanist', sans-serif;
+    /* 32px */
+    --urbanist-h3: 600 1.75rem 'Urbanist', sans-serif;
+    /* 28px */
+    --urbanist-h4: 400 1.5rem 'Urbanist', sans-serif;
+    /* 24px */
+    --urbanist-h5: 400 1.375rem 'Urbanist', sans-serif;
+    /* 22px */
+    --urbanist-h6: 400 1rem 'Urbanist', sans-serif;
+    /* 16px */
+    --urbanist-regular: 400 1rem 'Urbanist', sans-serif;
+    /* 16px */
+    --urbanist-small: 400 0.875rem 'Urbanist', sans-serif;
+    /* 14px */
+
+    /* Typography - Lora */
+    --lora-h1: 700 2.25rem 'Lora', serif;
+    /* 36px */
+    --lora-h2: 700 2rem 'Lora', serif;
+    /* 32px */
+    --lora-h3: 600 1.75rem 'Lora', serif;
+    /* 28px */
+    --lora-h4: 400 1.5rem 'Lora', serif;
+    /* 24px */
+    --lora-h5: 400 1.375rem 'Lora', serif;
+    /* 22px */
+    --lora-h6: 400 1rem 'Lora', serif;
+    /* 16px */
+    --lora-regular: 400 1rem 'Lora', serif;
+    /* 16px */
+    --lora-small: 400 0.875rem 'Lora', serif;
+    /* 14px */
 }
 
 *,
@@ -15,30 +51,51 @@
 }
 
 html {
-    scroll-behavior: smooth; /* Fallback for browsers without JS */
+    scroll-behavior: smooth;
+    /* Fallback for browsers without JS */
 }
 
 body {
     background-color: var(--off-white);
     color: var(--off-black);
-    font-family: var(--font-sans);
+    font: var(--urbanist-regular);
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
 
+/* --- TYPOGRAPHY UTILITIES --- */
+.font-serif {
+    font-family: var(--font-serif) !important;
+}
+
+.font-sans {
+    font-family: var(--font-sans) !important;
+}
+
 /* --- TYPOGRAPHY --- */
-h1, h2, h3 {
+h1 {
+    font: var(--urbanist-h1);
     line-height: 1.2;
-    font-weight: 600;
+}
+
+h2 {
+    font: var(--urbanist-h2);
+    line-height: 1.2;
+}
+
+h3 {
+    font: var(--urbanist-h3);
+    line-height: 1.2;
 }
 
 .section-title {
-    font-family: var(--font-serif);
+    font: var(--lora-h2);
     font-size: clamp(2rem, 5vw, 3rem);
     margin-bottom: 2rem;
     text-align: center;
-    opacity: 0; /* For GSAP animation */
+    opacity: 0;
+    /* For GSAP animation */
 }
 
 a {
@@ -54,9 +111,13 @@ a:hover {
 /* --- LAYOUT & CONTAINERS --- */
 .content-section {
     max-width: 800px;
-    max-height: 100vh;
+    min-height: 100vh;
     margin: 0 auto;
     padding: 6rem 1.5rem;
+}
+
+.content-section p {
+    margin-bottom: 1.2rem;
 }
 
 /* --- HEADER & NAVIGATION --- */
@@ -80,7 +141,8 @@ a:hover {
 }
 
 .desktop-nav {
-    display: none; /* Hidden on mobile */
+    display: none;
+    /* Hidden on mobile */
 }
 
 .desktop-nav ul {
@@ -98,6 +160,7 @@ a:hover {
     cursor: pointer;
     z-index: 1001;
 }
+
 .hamburger-line {
     width: 25px;
     height: 2px;
@@ -115,7 +178,8 @@ a:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    transform: translateY(100%); /* Initially hidden */
+    transform: translateY(100%);
+    /* Initially hidden */
     z-index: 999;
 }
 
@@ -130,8 +194,7 @@ a:hover {
 
 .mobile-nav-container nav a {
     color: var(--off-white);
-    font-size: 2rem;
-    font-weight: 500;
+    font: var(--urbanist-h2);
 }
 
 /* --- BUTTONS & CTAS --- */
@@ -140,7 +203,7 @@ a:hover {
     padding: 0.75rem 1.5rem;
     background-color: var(--off-black);
     color: var(--off-white);
-    font-family: var(--font-sans);
+    font: var(--urbanist-regular);
     font-weight: 500;
     border: 1px solid var(--off-black);
     cursor: pointer;
@@ -157,6 +220,7 @@ a:hover {
     background-color: transparent;
     color: var(--off-black);
 }
+
 .btn-outline:hover {
     background-color: var(--off-black);
     color: var(--off-white);
@@ -178,14 +242,13 @@ a:hover {
 }
 
 .home-content h1 {
-    font-family: var(--font-sans);
+    font: var(--urbanist-h1);
     font-size: clamp(3rem, 10vw, 6rem);
-    font-weight: 700;
     letter-spacing: -0.03em;
 }
 
 .home-subheading {
-    font-family: var(--font-serif);
+    font: var(--lora-h3);
     font-style: italic;
     font-size: clamp(1.2rem, 4vw, 1.75rem);
     margin: 1rem 0 2rem;
@@ -205,11 +268,19 @@ a:hover {
     width: 100%;
     background-color: var(--off-white);
 }
+
 .portfolio-card {
     display: flex;
     flex-direction: column;
-    opacity: 1; /* For GSAP animation */
+    opacity: 1;
+    /* For GSAP animation */
 }
+
+.portfolio-card>a {
+    display: block;
+    width: 100%;
+}
+
 .portfolio-card img {
     width: 100%;
     height: 300px;
@@ -218,26 +289,122 @@ a:hover {
     transition: all .2s ease-in-out;
     border-radius: 20px;
 }
+
 .portfolio-card img:hover {
     opacity: .3;
 }
+
 .card-content {
     padding: 2.5rem 1.5rem;
 }
+
 .card-content h3 {
-    font-family: var(--font-sans);
-    font-size: 1.75rem;
+    font: var(--urbanist-h3);
     margin-bottom: 1rem;
 }
+
 .card-content p {
     max-width: 600px;
+    max-width: 600px;
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+@media (min-width: 768px) {
+    .portfolio-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.portfolio-thumb {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 0.5rem;
+    /* 8px */
+    display: block;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.portfolio-thumb:hover {
+    transform: scale(1.02);
+}
+
+.portfolio-item {
+    margin: 0;
+}
+
+.portfolio-item figcaption {
+    margin-top: 0.5rem;
+    font: var(--urbanist-small);
+    color: var(--off-black);
+    text-align: center;
+}
+
+/* --- LIGHTBOX STYLES --- */
+.lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.lightbox.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.lightbox img {
+    max-width: 90%;
+    max-height: 80%;
+    border-radius: 4px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.lightbox-caption {
+    margin-top: 1rem;
+    color: var(--off-white);
+    font: var(--urbanist-regular);
+    text-align: center;
+    max-width: 80%;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0.5rem;
+    line-height: 1;
 }
 
 /* --- ABOUT SECTION --- */
 .about-content p {
     margin-bottom: 1.5rem;
+    font: var(--urbanist-regular);
     font-size: 1.125rem;
 }
+
 .about-content p:last-child {
     margin-bottom: 0;
 }
@@ -256,6 +423,7 @@ a:hover {
 
 .newsletter-section p {
     margin-bottom: 2rem;
+    font: var(--urbanist-regular);
     font-size: 1.125rem;
     max-width: 500px;
     margin-left: auto;
@@ -267,6 +435,7 @@ a:hover {
     color: var(--off-black);
     border-color: var(--off-white);
 }
+
 .newsletter-section .btn:hover {
     background-color: transparent;
     color: var(--off-white);
@@ -286,7 +455,7 @@ a:hover {
 
 .form-group label {
     margin-bottom: 0.5rem;
-    font-size: 0.875rem;
+    font: var(--urbanist-small);
     font-weight: 500;
 }
 
@@ -294,8 +463,7 @@ a:hover {
 .form-group textarea {
     width: 100%;
     padding: 0.75rem;
-    font-family: var(--font-sans);
-    font-size: 1rem;
+    font: var(--urbanist-regular);
     border: 1px solid var(--off-black);
     background-color: transparent;
     border-radius: 0;
@@ -341,7 +509,9 @@ a:hover {
 }
 
 /* --- GSAP Initial States (for animations) --- */
-.anim-hero-title, .anim-hero-subtitle, .anim-hero-cta {
+.anim-hero-title,
+.anim-hero-subtitle,
+.anim-hero-cta {
     opacity: 0;
     transform: translateY(30px);
 }
@@ -351,26 +521,37 @@ a:hover {
     .desktop-nav {
         display: block;
     }
+
     .mobile-nav-toggle {
         display: none;
     }
+
     .main-header {
         padding: 1.5rem 3rem;
     }
+
     .content-section {
         padding: 8rem 2rem;
     }
+
     .portfolio-card {
         flex-direction: row;
         align-items: stretch;
     }
+
     .portfolio-card:nth-child(even) {
         flex-direction: row-reverse;
     }
-    .portfolio-card img {
+
+    .portfolio-card>a {
         width: 50%;
+    }
+
+    .portfolio-card img {
+        width: 100%;
         height: auto;
     }
+
     .card-content {
         width: 50%;
         padding: 5rem;
@@ -378,16 +559,20 @@ a:hover {
         flex-direction: column;
         justify-content: center;
     }
+
     .footer-grid {
         grid-template-columns: repeat(3, 1fr);
         text-align: left;
     }
+
     .footer-col {
         align-items: flex-start;
     }
+
     .footer-col:nth-child(2) {
         align-items: center;
     }
+
     .footer-col:nth-child(3) {
         flex-direction: row;
         justify-content: flex-end;
