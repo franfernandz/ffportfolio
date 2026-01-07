@@ -1,26 +1,26 @@
 /* --- CSS VARIABLES & GLOBAL STYLES --- */
 :root {
     --off-black: #1E2019;
-    --off-white: #EDF2EF;
-    --font-sans: 'Urbanist', sans-serif;
+    --off-white: #FFFFFF;
+    --font-sans: 'Geist', sans-serif;
     --font-serif: 'Lora', serif;
 
-    /* Typography - Urbanist */
-    --urbanist-h1: 700 2.25rem 'Urbanist', sans-serif;
+    /* Typography - Geist */
+    --geist-h1: 700 2.25rem 'Geist', sans-serif;
     /* 36px */
-    --urbanist-h2: 700 2rem 'Urbanist', sans-serif;
+    --geist-h2: 700 2rem 'Geist', sans-serif;
     /* 32px */
-    --urbanist-h3: 600 1.75rem 'Urbanist', sans-serif;
+    --geist-h3: 600 1.75rem 'Geist', sans-serif;
     /* 28px */
-    --urbanist-h4: 400 1.5rem 'Urbanist', sans-serif;
+    --geist-h4: 400 1.5rem 'Geist', sans-serif;
     /* 24px */
-    --urbanist-h5: 400 1.375rem 'Urbanist', sans-serif;
+    --geist-h5: 400 1.375rem 'Geist', sans-serif;
     /* 22px */
-    --urbanist-h6: 400 1rem 'Urbanist', sans-serif;
+    --geist-h6: 400 1rem 'Geist', sans-serif;
     /* 16px */
-    --urbanist-regular: 400 1rem 'Urbanist', sans-serif;
+    --geist-regular: 400 1rem 'Geist', sans-serif;
     /* 16px */
-    --urbanist-small: 400 0.875rem 'Urbanist', sans-serif;
+    --geist-small: 400 0.875rem 'Geist', sans-serif;
     /* 14px */
 
     /* Typography - Lora */
@@ -58,7 +58,7 @@ html {
 body {
     background-color: var(--off-white);
     color: var(--off-black);
-    font: var(--urbanist-regular);
+    font: var(--geist-regular);
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -75,17 +75,17 @@ body {
 
 /* --- TYPOGRAPHY --- */
 h1 {
-    font: var(--urbanist-h1);
+    font: var(--geist-h1);
     line-height: 1.2;
 }
 
 h2 {
-    font: var(--urbanist-h2);
+    font: var(--geist-h2);
     line-height: 1.2;
 }
 
 h3 {
-    font: var(--urbanist-h3);
+    font: var(--geist-h3);
     line-height: 1.2;
 }
 
@@ -194,7 +194,7 @@ a:hover {
 
 .mobile-nav-container nav a {
     color: var(--off-white);
-    font: var(--urbanist-h2);
+    font: var(--geist-h2);
 }
 
 /* --- BUTTONS & CTAS --- */
@@ -203,12 +203,15 @@ a:hover {
     padding: 0.75rem 1.5rem;
     background-color: var(--off-black);
     color: var(--off-white);
-    font: var(--urbanist-regular);
+    font: var(--geist-regular);
     font-weight: 500;
     border: 1px solid var(--off-black);
+    border-radius: 0.5rem;
+    /* 8px */
     cursor: pointer;
     transition: all 0.3s ease;
     text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
 }
 
 .btn:hover {
@@ -242,7 +245,7 @@ a:hover {
 }
 
 .home-content h1 {
-    font: var(--urbanist-h1);
+    font: var(--geist-h1);
     font-size: clamp(3rem, 10vw, 6rem);
     letter-spacing: -0.03em;
 }
@@ -273,6 +276,7 @@ a:hover {
     display: flex;
     flex-direction: column;
     opacity: 1;
+    margin-bottom: 1rem;
     /* For GSAP animation */
 }
 
@@ -287,7 +291,9 @@ a:hover {
     object-fit: cover;
     display: block;
     transition: all .2s ease-in-out;
-    border-radius: 20px;
+    border-radius: 0.75rem;
+    /* 12px */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
 }
 
 .portfolio-card img:hover {
@@ -296,10 +302,14 @@ a:hover {
 
 .card-content {
     padding: 2.5rem 1.5rem;
+    background-color: #f1f1f1;
+    border-radius: 0.75rem;
+    /* 12px */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
 .card-content h3 {
-    font: var(--urbanist-h3);
+    font: var(--geist-h3);
     margin-bottom: 1rem;
 }
 
@@ -313,11 +323,22 @@ a:hover {
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
     margin-top: 2rem;
+    grid-auto-rows: minmax(200px, auto);
 }
+
 
 @media (min-width: 768px) {
     .portfolio-grid {
         grid-template-columns: repeat(4, 1fr);
+    }
+
+    /* Bento grid pattern - varying sizes for visual interest */
+    .portfolio-item:nth-child(4n+1) {
+        grid-column: span 2;
+    }
+
+    .portfolio-item:nth-child(4n+4) {
+        grid-column: span 2;
     }
 }
 
@@ -329,7 +350,8 @@ a:hover {
     /* 8px */
     display: block;
     cursor: pointer;
-    transition: transform 0.2s ease;
+    transition: transform 0.3s ease;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
 
 .portfolio-thumb:hover {
@@ -338,11 +360,20 @@ a:hover {
 
 .portfolio-item {
     margin: 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    border-radius: 0.5rem;
+    overflow: hidden;
+    transition: box-shadow 0.3s ease;
+}
+
+.portfolio-item:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
 }
 
 .portfolio-item figcaption {
     margin-top: 0.5rem;
-    font: var(--urbanist-small);
+    padding: 0.5rem;
+    font: var(--geist-small);
     color: var(--off-black);
     text-align: center;
 }
@@ -380,7 +411,7 @@ a:hover {
 .lightbox-caption {
     margin-top: 1rem;
     color: var(--off-white);
-    font: var(--urbanist-regular);
+    font: var(--geist-regular);
     text-align: center;
     max-width: 80%;
 }
@@ -401,7 +432,7 @@ a:hover {
 /* --- ABOUT SECTION --- */
 .about-content p {
     margin-bottom: 1.5rem;
-    font: var(--urbanist-regular);
+    font: var(--geist-regular);
     font-size: 1.125rem;
 }
 
@@ -415,6 +446,9 @@ a:hover {
     text-align: center;
     background-color: var(--off-black);
     color: var(--off-white);
+    border-radius: 0.75rem;
+    /* 12px */
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
 
 .newsletter-section .section-title {
@@ -423,7 +457,7 @@ a:hover {
 
 .newsletter-section p {
     margin-bottom: 2rem;
-    font: var(--urbanist-regular);
+    font: var(--geist-regular);
     font-size: 1.125rem;
     max-width: 500px;
     margin-left: auto;
@@ -455,7 +489,7 @@ a:hover {
 
 .form-group label {
     margin-bottom: 0.5rem;
-    font: var(--urbanist-small);
+    font: var(--geist-small);
     font-weight: 500;
 }
 
@@ -463,7 +497,7 @@ a:hover {
 .form-group textarea {
     width: 100%;
     padding: 0.75rem;
-    font: var(--urbanist-regular);
+    font: var(--geist-regular);
     border: 1px solid var(--off-black);
     background-color: transparent;
     border-radius: 0;
