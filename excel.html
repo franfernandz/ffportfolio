@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Excel Project - Francisco Fernández</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Afacad:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <button class="hamburger" id="hamburger-btn" aria-label="Toggle Navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul id="nav-list">
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#projects">Projects</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+                <li class="dropdown-container">
+                    <button id="download-cv-btn" class="cta-outline">Download CV</button>
+                    <div id="cv-dropdown" class="dropdown-menu">
+                        <a href="#" download>ENG 🇬🇧</a>
+                        <a href="#" download>ESP 🇦🇷</a>
+                    </div>
+                </li>
+                <li>
+                    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Theme">
+                        ☀/☾
+                    </button>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="parallax-section project-detail-section dark-bg" style="min-height: 100vh;">
+            <div class="content blog-content">
+                <h1>Transforming a Critical Excel Workflow into a Scalable Web Application</h1>
+
+
+                <h3>Project Overview</h3>
+                <p>
+                    I led the design and development of a web application that replaced a legacy
+                    Excel-based workflow used for legally and financially critical reporting.
+                </p>
+                <p>
+                    The system is used by over 2,500 external users and internal analysts, reducing data entry time,
+                    eliminating file duplication, and improving reliability and traceability.
+                </p>
+
+                <h3>Context & Contraints</h3>
+                <p>
+                    The project was developed for a government institution and is used by mutual organizations across
+                    Argentina.
+                </p>
+                <p>
+                    The workflow is legally, tax, and financially critical, and users submit data between one and three
+                    times per month.
+                </p>
+                <p>
+                    The previous system had been in place for over 10 years, meaning any change introduced a high risk
+                    of resistance,
+                    errors, and loss of trust.
+                </p>
+
+                <h3>Problem</h3>
+                <p>
+                    The existing Excel-based process generated a growing number of files that were difficult to track,
+                    store, and analyze.
+                </p>
+                <p>
+                    As the organization began using BI tools, data had to be extracted and stored separately in a
+                    database, creating
+                    duplication, operational friction, and increasing the risk of errors.
+                </p>
+
+                <h3>Design Objectives</h3>
+                <ul>
+                    <li>Preserve user trust by maintaining familiarity with the original Excel workflow</li>
+                    <li>Reduce data entry time and cognitive load</li>
+                    <li>Eliminate file-based workflows without disrupting existing processes</li>
+                </ul>
+
+                <h3>Key Decisions</h3>
+                <h4>Decision 1 - Form Structure</h4>
+                <p>
+                    Keeping the original form structure avoided user re-education, reduced development complexity,
+                    and ensured continuity with a legally validated format.
+                </p>
+                <h4>Decision 2 - Web Based Solution </h4>
+                <p>
+                    A web application eliminated installation friction, reduced security concerns, and accelerated
+                    adoption
+                    compared to desktop or Excel-based alternatives.
+                </p>
+                <h4>Decision 3 - Integrated data visualization</h4>
+                <p>
+                    Instead of exporting new files, data is visualized inside the application, with optional PDF exports
+                    to prevent
+                    file accumulation.
+                </p>
+
+                <h3>Solution & Flow</h3>
+                <p>
+                    The solution consists of a six-step data entry flow with clear progress tracking and confirmation
+                    steps for critical actions.
+                </p>
+                <p>
+                    Once completed, forms are stored in a centralized database and can be accessed through a dedicated
+                    visualization interface.
+                </p>
+
+                <h3>Validations, Results and Learnings</h3>
+                <h4>Validation & Results</h4>
+                <p>
+                    20 external users + 6 internal analysts
+
+                    40–50% reduction in data entry time
+
+                    Increased confidence due to confirmation flows
+
+                    Identified friction in post-submission review (to be addressed next phase)
+                </p>
+                <h4>Learnings</h4>
+                <p>
+                    Stakeholder communication in low-availability environments
+
+                    Translating technical decisions to non-technical audiences
+
+                    Balancing user input with decision ownership to avoid micro-delays
+                </p>
+
+                <h3>Role</h3>
+                <p>
+                    Product design, UX/UI, solution architecture, and front-end development.
+                </p>
+                <p>
+                    I led the project end to end, collaborating closely with internal stakeholders and a database
+                    specialist responsible for data infrastructure.
+                </p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <h3>Gallery</h3>
+                <div class="bento-grid">
+                    <div class="bento-item wide">
+                        <img src="./img/excel/original_form.png" alt="Detail 1">
+                    </div>
+                    <div class="bento-item">
+                        <img src="img/excel/screen_1.png" alt="original form">
+                    </div>
+                    <div class="bento-item tall">
+                        <img src="img/excel/screen_2.png" alt="Detail 3">
+                    </div>
+                    <div class="bento-item">
+                        <img src="img/excel/screen_3.png" alt="Detail 4">
+                    </div>
+                </div>
+
+                <!-- Modal Container -->
+                <div id="image-modal" class="modal">
+                    <span class="close-modal">&times;</span>
+                    <img class="modal-content" id="modal-img">
+                </div>
+
+                <a href="index.html#projects" class="cta-button" style="margin-top: 2rem;">Back to Projects</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Francisco Fernández. All rights reserved.</p>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+
+</html>

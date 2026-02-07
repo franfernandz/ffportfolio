@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Francisco Fernández - Product Designer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <button class="hamburger" id="hamburger-btn" aria-label="Toggle Navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul id="nav-list">
+                <li><a href="#">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li class="dropdown-container">
+                    <button id="download-cv-btn" class="cta-outline">Download CV</button>
+                    <div id="cv-dropdown" class="dropdown-menu">
+                        <a href="https://franciscofernandez.netlify.app/doc/FernandezFrancisco_CV_Eng.pdf" download>ENG
+                            🇬🇧</a>
+                        <a href="https://franciscofernandez.netlify.app/doc/FernandezFrancisco_CV_Esp.pdf" download>ESP
+                            🇦🇷</a>
+                    </div>
+                </li>
+                <li>
+                    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Theme">
+                        ☀/☾
+                    </button>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="parallax-section dark-bg">
+            <div class="content">
+                <h1>Francisco Fernández</h1>
+                <h3>Product Designer</h3>
+            </div>
+        </section>
+
+        <section class="parallax-section spacer light-bg">
+            <!-- Empty Section -->
+        </section>
+
+        <section id="about" class="parallax-section dark-bg">
+            <div class="content">
+                <h2>About Me</h2>
+                <p>
+                    I design and build digital products from early definition to production.
+                </p>
+                <p>
+                    My background combines product design, UX/UI, and front-end development,
+                    which allows me to take ownership of complex problems and turn them into usable,
+                    scalable solutions.
+                </p>
+                <p>
+                    I’ve worked on projects ranging from critical internal systems used by thousands
+                    of users to early-stage product concepts and MVPs, always focusing on clarity, reliability,
+                    and decision-making.
+                </p>
+                <p>
+                    I’m particularly experienced in translating ambiguous requirements into structured flows
+                    aligning stakeholders, and delivering products that balance user needs, technical
+                    constraints, and business goals.
+                </p>
+            </div>
+        </section>
+
+        <section class="parallax-section spacer dark-bg">
+            <!-- Empty Section (Background #141414 as requested) -->
+        </section>
+
+        <section id="projects" class="parallax-section light-bg">
+            <div class="content projects-container">
+                <h2>Projects</h2>
+                <div class="projects-grid">
+                    <!-- Lead Project Card -->
+                    <div class="project-card-full">
+                        <span class="label">LEAD PROJECT</span>
+                        <h3>Transforming a Critical Excel Workflow into a Scalable Web Application</h3>
+                        <p>I led the design and development of a web-based system that replaced a high-risk
+                            Excel workflow used by 2,500+ users, reducing data entry time and operational
+                            friction while improving reliability and traceability.</p>
+                        <a href="excel.html" class="view-project-btn">View Project</a>
+                    </div>
+
+                    <!-- Secondary Project Card -->
+                    <div class="project-card-full align-right">
+                        <h3>Designing a Trust-First Interface for Home Emergency Services</h3>
+                        <p>UI design for a home services platform, focused on clarity, trust, and
+                            decision-making under stress, based on predefined UX research constraints.</p>
+                        <a href="serviapp.html" class="view-project-btn">View Project</a>
+                    </div>
+                </div>
+
+                <!-- Other Projects Dropdown -->
+                <div class="other-projects-container">
+                    <div class="dropdown-container">
+                        <button id="other-projects-btn" class="cta-outline dark-text-btn">Other Projects</button>
+                        <div id="other-projects-dropdown" class="dropdown-menu">
+                            <a href="shopee.html">Shopee Project</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="parallax-section spacer light-bg">
+            <!-- Empty Section -->
+        </section>
+
+        <section id="contact" class="parallax-section dark-bg">
+            <div class="content">
+                <h2>Contact</h2>
+                <p>Let's work together.</p>
+                <a href="mailto:fernandezfjavier@gmail.com" class="cta-button">Get in Touch</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Francisco Fernández. All rights reserved.</p>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+
+</html>

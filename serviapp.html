@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serviapp Project - Francisco Fernández</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Afacad:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <button class="hamburger" id="hamburger-btn" aria-label="Toggle Navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul id="nav-list">
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#projects">Projects</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+                <li class="dropdown-container">
+                    <button id="download-cv-btn" class="cta-outline">Download CV</button>
+                    <div id="cv-dropdown" class="dropdown-menu">
+                        <a href="#" download>ENG 🇬🇧</a>
+                        <a href="#" download>ESP 🇦🇷</a>
+                    </div>
+                </li>
+                <li>
+                    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Theme">
+                        ☀/☾
+                    </button>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="parallax-section project-detail-section dark-bg" style="min-height: 100vh;">
+            <div class="content blog-content">
+                <h1>Designing a Trust-First Interface for Home Emergency Services</h1>
+
+
+                <h3>Project Overview</h3>
+                <p>
+                    ServiApp is a mobile application designed to connect users with home service providers in
+                    situations of urgency or immediate need, such as repairs or technical failures at home.
+                </p>
+                <p>
+                    The product is aimed at people who need to quickly find a reliable professional when they
+                    do not already have a trusted contact available.
+                </p>
+                <p>
+                    This project was developed as part of a UI Design course provided by the Government of the City
+                    of Buenos Aires, where the UX flow and functional requirements were predefined. My responsibility
+                    focused on translating that UX into a clear, usable, and scalable visual interface.
+                </p>
+
+                <h3>The Assignment</h3>
+                <p>
+                    The project started with a predefined UX research package, which included benchmarking of similar
+                    applications,
+                    a defined user persona, empathy maps, user journey maps, and additional insights.
+                </p>
+                <p>
+                    As part of the assignment constraints, the research could not be modified: no insights could be
+                    added or removed.
+                    The only allowed exception was to intentionally deprioritize specific findings if a clear UI-level
+                    justification existed.
+                </p>
+                <p>
+                    My responsibility was fully focused on the UI design and interaction layer. I had full autonomy over
+                    the visual system, layout
+                    decisions, component hierarchy, and interaction patterns, with the requirement to prototype at least
+                    one complete critical flow—from
+                    login/registration to the execution of a key user action.
+                </p>
+                <p>
+                    This setup required translating existing UX decisions into a coherent, usable, and production-ready
+                    interface while ensuring consistency
+                    across the entire user journey.
+                </p>
+
+                <h3>Key UI Decision</h3>
+                <p>
+                    One of the core UI decisions was to design a minimal and consistent design system, with a reduced
+                    set of
+                    components and limited visual variations. The goal was to reinforce a sense of stability and
+                    reliability,
+                    especially considering that users interact with the app in high-stress or urgent situations. A
+                    predictable interface
+                    reduces cognitive load and increases user confidence.
+                </p>
+                <p>
+                    Another key decision was the integration of maps as a central interaction element. Maps are used
+                    both to select professionals
+                    by geographic area and to clearly communicate each provider’s service coverage. This prevents
+                    unnecessary contact attempts
+                    and sets accurate expectations before initiating communication.
+                </p>
+                <p>
+                    Finally, pricing was intentionally designed around predefined cost ranges, with a minimum baseline
+                    enforced for each service.
+                    This approach balances transparency for users with fairness for service providers, allowing both
+                    parties to quickly assess
+                    whether a service is affordable and aligned with expectations before proceeding.
+                </p>
+
+                <h3>Learnings & Reflections</h3>
+                <p>
+                    his project helped me strengthen my ability to build lean and fast design systems. Working with
+                    strict deadlines required
+                    early design decisions that could scale across the interface without constant iteration. Defining a
+                    reduced component set early
+                    became a practical tool to maintain speed and consistency.
+                </p>
+                <p>
+                    Another key learning was working with a rigid UX research framework created by someone else. I was
+                    not able to modify the research
+                    or validate UX decisions in parallel with UI design, which forced me to rely entirely on
+                    interpreting documented insights. This
+                    improved my ability to translate abstract findings into concrete interface decisions.
+                </p>
+                <p>
+                    Finally, this project reinforced the value of designing within strict constraints. Having full
+                    visual freedom but limited time required
+                    resisting unnecessary creativity and focusing on clarity, familiarity, and usability. Intentionally
+                    limiting design options
+                    helped prioritize what truly mattered for users interacting with the app in high-stress situations.
+                </p>
+
+                <h3>Gallery</h3>
+                <div class="bento-grid">
+                    <div class="bento-item wide">
+                        <img src="img/serviapp/home.png" alt="Detail 1">
+                    </div>
+                    <div class="bento-item">
+                        <img src="img/serviapp/register_1.png" alt="Detail 2">
+                    </div>
+                    <div class="bento-item tall">
+                        <img src="img/serviapp/register_2.png" alt="Detail 3">
+                    </div>
+                    <div class="bento-item">
+                        <img src="img/serviapp/registro_ok.png" alt="Detail 4">
+                    </div>
+                    <div class="bento-item wide">
+                        <img src="img/serviapp/professional_profile.png" alt="Detail 5">
+                    </div>
+                    <div class="bento-item">
+                        <img src="img/serviapp/messaage_success.png" alt="Detail 6">
+                    </div>
+                </div>
+
+                <!-- Modal Container -->
+                <div id="image-modal" class="modal">
+                    <span class="close-modal">&times;</span>
+                    <img class="modal-content" id="modal-img">
+                </div>
+
+                <a href="index.html#projects" class="cta-button" style="margin-top: 2rem;">Back to Projects</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Francisco Fernández. All rights reserved.</p>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopee Project - Francisco Fernández</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Afacad:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <button class="hamburger" id="hamburger-btn" aria-label="Toggle Navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul id="nav-list">
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#projects">Projects</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+                <li class="dropdown-container">
+                    <button id="download-cv-btn" class="cta-outline">Download CV</button>
+                    <div id="cv-dropdown" class="dropdown-menu">
+                        <a href="#" download>ENG 🇬🇧</a>
+                        <a href="#" download>ESP 🇦🇷</a>
+                    </div>
+                </li>
+                <li>
+                    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Theme">
+                        ☀/☾
+                    </button>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="parallax-section project-detail-section dark-bg" style="min-height: 100vh;">
+            <div class="content blog-content">
+                <h1>Shopee Project</h1>
+
+
+                <h3>Context</h3>
+                <p>
+                    Shopee targets users who are ready to make a purchase but are uncertain about which specific product
+                    to choose.
+                    These users typically have a defined need and intent to buy, but face difficulty navigating large
+                    product catalogs,
+                    technical specifications, and multiple similar options. Shopee is used at the moment of
+                    decision-making, when the
+                    user wants guidance to confidently move forward with a purchase.
+                </p>
+
+                <h3>Product Hypothesis</h3>
+                <p>
+                    sers do not want to compare dozens of products or fully understand technical specifications.
+                    Instead, they want
+                    their needs to be interpreted and translated into a small, confident set of recommendations that
+                    clearly fit their
+                    intended use.
+                </p>
+                <p>
+                    By reducing choice and framing recommendations around user needs rather than product features, users
+                    will feel more
+                    confident and move forward with a purchase faster.
+                </p>
+
+                <h3>MVP Scope Decisions</h3>
+                <p>
+                    For the MVP, I deliberately chose not to support product categories where purchasing decisions are
+                    primarily subjective
+                    or driven by personal taste rather than measurable criteria.
+                </p>
+                <p>
+                    Categories such as clothing were intentionally excluded. While they include fixed attributes (size,
+                    material, intended use),
+                    the dominant decision factor is personal preference, which cannot be reliably guided through an
+                    automated decision assistant.
+                </p>
+                <p>
+                    Given that Shopee’s core hypothesis relies on translating user needs into confident recommendations,
+                    including highly subjective
+                    categories would have introduced noise into the validation process and weakened the signal.
+                    Narrowing the scope allowed the MVP
+                    to focus on products where decision criteria are clearer, comparable, and more strongly tied to
+                    functional needs.
+                </p>
+
+                <h3>Decision Flow</h3>
+                <p>
+                    Shopee reduces the decision space through a short, structured question flow designed to
+                    progressively narrow down user needs.
+                </p>
+                <p>
+                    Instead of presenting a large catalog upfront, the assistant asks a limited set of closed questions
+                    (up to six) focused on usage
+                    context, constraints, and priorities. Each answer incrementally filters the available catalog based
+                    on predefined criteria and
+                    available product data.The flow starts with a single question about the user's primary need, such as
+                    "I need a new phone" or
+                    "I need a new laptop." This question is carefully crafted to elicit a clear, specific need that can
+                    be translated into a set
+                    of recommendations.
+                </p>
+                <p>
+                    The number of questions was intentionally capped to avoid user fatigue and to preserve momentum
+                    toward a decision. The goal is
+                    not to fully describe the user, but to collect only the minimum information required to confidently
+                    reduce the option space.
+                </p>
+                <p>
+                    Once the filtering process reaches a small and relevant subset, Shopee presents three recommended
+                    products. This number was
+                    chosen to balance clarity and choice: enough variety to feel in control, but limited enough to
+                    prevent decision overload.
+                </p>
+
+                <h3>Validation & Signals</h3>
+                <p>
+                    Shopee was tested through a closed beta with six participants. Each user was given access to the
+                    full product catalogs of
+                    selected stores, which were also made visible outside the assistant to ensure transparency and avoid
+                    any perception of biased or
+                    reduced options.
+                </p>
+                <p>
+                    Participants were asked to simulate five purchase decisions each, answering the assistant’s
+                    questions differently on every run to
+                    generate varied recommendations. For each simulation, users shared both their responses and the
+                    three products suggested by Shopee.
+                </p>
+                <p>
+                    Across 30 simulated purchase flows, users reported being satisfied with the recommendations in 18
+                    cases (60%). Satisfaction was defined
+                    as receiving options they considered relevant and aligned with their needs, without requiring them
+                    to select a final purchase option.
+                </p>
+                <p>
+                    While these results indicate a positive early signal for the decision flow, the validation scope was
+                    intentionally limited. The test
+                    focused on a single product category, and it did not measure conversion or final purchase behavior.
+                    Additional validation would be
+                    equired to assess performance across different product types and to evaluate downstream metrics such
+                    as click-through or purchase
+                    completion.
+                </p>
+
+                <h3>Results</h3>
+                <p>
+                    Outcomes and impact of the project.
+                </p>
+
+                <h3>Gallery</h3>
+                <div class="bento-grid">
+                    <div class="bento-item wide">
+                        <img src="https://placehold.co/800x400/333/FFF?text=Detail+1" alt="Detail 1">
+                    </div>
+                    <div class="bento-item">
+                        <img src="https://placehold.co/400x400/333/FFF?text=Detail+2" alt="Detail 2">
+                    </div>
+                    <div class="bento-item tall">
+                        <img src="https://placehold.co/400x800/333/FFF?text=Detail+3" alt="Detail 3">
+                    </div>
+                    <div class="bento-item">
+                        <img src="https://placehold.co/400x400/333/FFF?text=Detail+4" alt="Detail 4">
+                    </div>
+                    <div class="bento-item wide">
+                        <img src="https://placehold.co/800x400/333/FFF?text=Detail+5" alt="Detail 5">
+                    </div>
+                    <div class="bento-item">
+                        <img src="https://placehold.co/400x400/333/FFF?text=Detail+6" alt="Detail 6">
+                    </div>
+                </div>
+
+                <!-- Modal Container -->
+                <div id="image-modal" class="modal">
+                    <span class="close-modal">&times;</span>
+                    <img class="modal-content" id="modal-img">
+                </div>
+
+                <a href="index.html#projects" class="cta-button" style="margin-top: 2rem;">Back to Projects</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Francisco Fernández. All rights reserved.</p>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+
+</html>

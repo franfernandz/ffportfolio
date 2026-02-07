@@ -1,0 +1,692 @@
+@import url('https://fonts.googleapis.com/css2?family=Afacad:wght@400;500;600;700&display=swap');
+
+:root {
+    --color-main: #141414;
+    --color-secondary: #F3F3F3;
+    --color-highlights: #D9D9D9;
+}
+
+body.light-mode {
+    --color-main: #F3F3F3;
+    --color-secondary: #141414;
+    --color-highlights: #141414;
+    /* Dark highlight for light mode */
+}
+
+html {
+    scroll-behavior: smooth;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Afacad', sans-serif;
+    line-height: 1.6;
+    background-color: var(--color-main);
+    color: var(--color-secondary);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Header & Nav */
+header {
+    background: var(--color-main);
+    /* Sticky Header needs solid bg to be visible if it overlaps */
+    padding: 1.5rem 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.1);
+    /* Neutral border */
+}
+
+nav ul {
+    list-style: none;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: var(--color-secondary);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.1rem;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: var(--color-highlights);
+}
+
+/* Download CV Dropdown */
+.dropdown-container {
+    position: relative;
+    display: inline-block;
+}
+
+.cta-outline {
+    background: transparent;
+    border: 1px solid var(--color-secondary);
+    color: var(--color-secondary);
+    padding: 8px 16px;
+    font-family: 'Afacad', sans-serif;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.cta-outline:hover {
+    background: var(--color-secondary);
+    color: var(--color-main);
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--color-main);
+    border: 1px solid #333;
+    min-width: 100px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+    z-index: 1001;
+    margin-top: 10px;
+}
+
+.dropdown-menu.show {
+    display: block;
+}
+
+.dropdown-menu a {
+    display: block;
+    color: var(--color-secondary) !important;
+    /* Force variable text */
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.2);
+    font-size: 0.9rem !important;
+}
+
+.dropdown-menu a:last-child {
+    border-bottom: none;
+}
+
+.dropdown-menu a:hover {
+    background: #222;
+    color: var(--color-highlights) !important;
+}
+
+/* Main Content & Parallax */
+main {
+    padding: 0;
+    max-width: none;
+    margin: 0;
+}
+
+.parallax-section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    /* Creates the stacking/card effect */
+    padding: 2rem 2rem;
+    /* Reduced padding from 4rem to 2rem */
+    box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.1);
+    /* Slight shadow to separate layers */
+}
+
+.project-detail-section {
+    padding-top: 8rem;
+    justify-content: flex-start;
+    height: auto;
+    /* Allow content to push height */
+    min-height: 100vh;
+}
+
+/* Background Colors */
+.dark-bg {
+    background-color: var(--color-main);
+    color: var(--color-secondary);
+}
+
+.light-bg {
+    background-color: var(--color-secondary);
+    /* #F3F3F3 */
+    color: var(--color-main);
+    /* Dark text on light bg */
+}
+
+/* Specific Adjustments for Contrast */
+.light-bg h2,
+.light-bg p {
+    color: var(--color-main);
+}
+
+.spacer {
+    /* Spacers are just visual breaks, keep them simple */
+    justify-content: center;
+}
+
+/* Content Styling */
+.content {
+    margin-top: 4rem;
+    text-align: center;
+    max-width: 800px;
+}
+
+h1 {
+    font-size: 4rem;
+}
+
+h1:hover {
+    opacity: .5;
+}
+
+h2 {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+}
+
+h3 {
+    font-size: 2.5rem;
+    font-weight: 300;
+}
+
+h4 {
+    font-size: 2rem;
+    font-weight: 300;
+}
+
+/* Project Links & Grid */
+.projects-container {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+#projects {
+    margin-bottom: 10rem;
+}
+
+.projects-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    margin-bottom: 2rem;
+    text-align: left;
+}
+
+.project-card-full {
+    background: transparent;
+    color: var(--color-main);
+    padding: 0;
+    transition: transform 0.3s ease;
+}
+
+.label {
+    padding: .5rem;
+    width: auto;
+    display: inline-block;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    opacity: 1;
+    background-color: #ff4d6d;
+    color: #f3f3f3;
+    border: none;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.project-card-full h3 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.project-card-full p {
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+    text-align: left;
+    /* Override global justify if needed, or keep generic */
+    max-width: 600px;
+}
+
+.view-project-btn {
+    display: inline-block;
+    text-decoration: none;
+    color: var(--color-main);
+    font-weight: 600;
+    padding: 10px 20px;
+    border-radius: 4px;
+    border: 1px solid var(--color-main);
+    background-color: transparent;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.view-project-btn:hover {
+    background-color: var(--color-main);
+    color: var(--color-secondary);
+}
+
+.align-right {
+    align-self: flex-end;
+    text-align: right;
+    margin-bottom: 2rem;
+}
+
+.align-right p {
+    text-align: right;
+    /* Ensure paragraph text also aligns right */
+    margin-left: auto;
+    /* Push to right if max-width is set */
+    margin-right: 0;
+}
+
+/* Other Projects Dropdown specificities */
+.other-projects-container .dropdown-menu {
+    top: auto;
+    bottom: 100%;
+    margin-top: 0;
+    margin-bottom: 10px;
+    background: #141414;
+    /* Ensure matches theme */
+    border-color: #333;
+}
+
+.other-projects-container .dropdown-menu a {
+    color: #f3f3f3 !important;
+}
+
+.dark-text-btn {
+    color: var(--color-main);
+    border-color: var(--color-main);
+}
+
+.dark-text-btn:hover {
+    background: var(--color-main);
+    color: var(--color-secondary);
+}
+
+
+p {
+    text-align: justify;
+    line-height: 1.5;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Footer */
+footer {
+    background-color: var(--color-main);
+    color: var(--color-secondary);
+    padding: 2rem;
+    text-align: center;
+    position: sticky;
+    /* Keeps it in flow but allows it to be the final "card" if needed, usually static is fine but sticky keeps consistency */
+    top: 0;
+    z-index: 10;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--color-main);
+    color: var(--color-secondary);
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 4px;
+    border: 1px solid var(--color-secondary);
+    /* Added border for contrast */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: var(--color-secondary);
+    color: var(--color-main);
+}
+
+footer p {
+    font-size: 1rem;
+}
+
+.theme-toggle {
+    background: transparent;
+    border: 2px solid var(--color-secondary);
+    border-radius: 50px;
+    color: var(--color-secondary);
+    cursor: pointer;
+    font-size: 1rem;
+    padding: 5px 15px;
+    transition: all 0.3s ease;
+    vertical-align: middle;
+}
+
+.theme-toggle:hover {
+    background-color: var(--color-secondary);
+    color: var(--color-main);
+}
+
+/* Responsiveness */
+.hamburger {
+    display: none;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+    padding: 10px;
+    z-index: 1002;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+
+    /* Header & Nav */
+    header {
+        padding: 1rem 0;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    nav ul {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 100%;
+        height: 100vh;
+        background-color: var(--color-main);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: right 0.3s ease;
+        z-index: 1001;
+        display: flex;
+        /* Override existing display settings if any */
+        padding-top: 60px;
+        /* Space for close button if needed, or just centering */
+    }
+
+    nav ul.active {
+        right: 0;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 20px 0;
+    }
+
+    nav ul li a {
+        font-size: 1.5rem;
+    }
+
+    /* General Layout */
+    .parallax-section {
+        padding: 4rem 1.5rem;
+        /* Adjust padding */
+        min-height: unset !important;
+        height: auto !important;
+        /* Allow flexible height on mobile if content exceeds viewport */
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    h3 {
+        font-size: 1.5rem;
+    }
+
+    p {
+        font-size: 1.1rem;
+        text-align: left;
+        /* Better for mobile reading */
+    }
+
+    .parallax-section.spacer.light-bg,
+    .parallax-section.spacer.dark-bg {
+        display: none;
+    }
+
+    /* Projects */
+
+    #projects {}
+
+    .projects-grid {
+        gap: 2rem;
+    }
+
+    .project-card-full {
+        width: 100%;
+    }
+
+    .project-card-full h3 {
+        font-size: 1.8rem;
+    }
+
+    .label {
+        width: auto;
+        display: inline-block;
+        padding: 0.3rem 0.8rem;
+    }
+
+    .align-right {
+        text-align: left;
+        align-self: flex-start;
+    }
+
+    .align-right p {
+        text-align: left;
+    }
+
+    /* Dropdowns on Mobile */
+    .dropdown-menu {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        max-width: 280px;
+    }
+
+    .dropdown-container {
+        display: block;
+        /* Make container block to allow flows */
+        text-align: center;
+    }
+
+    /* Ensure specific dropdowns behave */
+    .other-projects-container .dropdown-menu {
+        bottom: auto;
+        /* Reset dropup */
+    }
+
+    .parallax-section,
+    footer {
+        position: relative;
+        top: auto;
+    }
+}
+
+/* Blog Post Styling */
+.blog-content {
+    text-align: left;
+    max-width: 700px;
+    /* Optimal reading width */
+    margin: 0 auto;
+    padding-bottom: 4rem;
+}
+
+.blog-content h1 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    line-height: 1.2;
+    text-align: center;
+    /* keep title centered? or left? user said blogpost style, usually title is distinct. Let's keep title centered or left. Let's try left for pure blog feel, but looking at previous H1s they were centered. Let's make it consistent with the container: left. But H1 in .content is centered in styles.css line 171. We need to override. */
+    text-align: left;
+}
+
+.blog-content h3 {
+    font-size: 2rem;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+    color: var(--color-secondary);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 0.5rem;
+}
+
+.blog-content h4 {
+    font-size: 1.5rem;
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+    color: var(--color-highlights);
+}
+
+.blog-content p {
+    text-align: left;
+    margin-bottom: 1.5rem;
+    font-size: 1.125rem;
+    line-height: 1.7;
+    /* Better readability */
+    color: var(--color-secondary);
+}
+
+.blog-content ul {
+    list-style: disc;
+    margin-left: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--color-secondary);
+}
+
+.blog-content ul li {
+    margin-bottom: 0.5rem;
+    font-size: 1.125rem;
+}
+
+/* Bento Grid */
+.bento-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin: 4rem 0;
+}
+
+.bento-item {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    min-height: 200px;
+}
+
+.bento-item:hover {
+    transform: scale(1.02);
+}
+
+.bento-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+/* Bento Variations */
+.bento-item.wide {
+    grid-column: span 2;
+}
+
+.bento-item.tall {
+    grid-row: span 2;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.modal.show {
+    opacity: 1;
+}
+
+.modal-content {
+    max-width: 90%;
+    max-height: 90vh;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    object-fit: contain;
+}
+
+.close-modal {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s;
+    z-index: 2001;
+}
+
+.close-modal:hover {
+    color: #ff4d6d;
+}
+
+@media (max-width: 768px) {
+    .bento-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .bento-item.wide,
+    .bento-item.tall {
+        grid-column: auto;
+        grid-row: auto;
+    }
+}
