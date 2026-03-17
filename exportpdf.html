@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF link exporter - Francisco Fernández</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Afacad:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <button class="hamburger" id="hamburger-btn" aria-label="Toggle Navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul id="nav-list">
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#projects">Projects</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+                <li class="dropdown-container">
+                    <button id="download-cv-btn" class="cta-outline">Download CV</button>
+                    <div id="cv-dropdown" class="dropdown-menu">
+                        <a href="#" download>ENG 🇬🇧</a>
+                        <a href="#" download>ESP 🇦🇷</a>
+                    </div>
+                </li>
+                <li>
+                    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Theme">
+                        ☀/☾
+                    </button>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="parallax-section project-detail-section dark-bg" style="min-height: 100vh;">
+            <div class="content blog-content">
+                <h1>Automating a Manual Document Indexing Task with a Browser-Based Scraping Tool</h1>
+
+
+                <h3>Project Overview</h3>
+                <p>
+                    I designed and built a browser-based tool that automatically crawls government document directories
+                    and exports a structured Excel
+                    spreadsheet with all PDF download links — reducing a task that would have taken days to minutes.
+                </p>
+
+                <h3>Context & Contraints</h3>
+                <p>
+                    The project was developed for a national government institute that publishes hundreds of official
+                    legal documents on its public website,
+                    organized by document type across multiple directories. The archive has grown over several years to
+                    more than 500 files.
+                </p>
+                <p>
+                    No internal document management system exists for this archive. Files live on a public web server
+                    with no structured index or database
+                    behind them.
+                </p>
+                <p>
+                    The solution had to work without modifying the existing server infrastructure, without requiring
+                    installation or technical knowledge
+                    from the end user, and without a dedicated budget or development team.
+                </p>
+
+                <h3>Problem</h3>
+                <p>
+                    A request came in to build an Excel spreadsheet mapping every document's title, year, and download
+                    URL — to feed a future national
+                    database. With no existing tool to automate this, the task would have fallen to a single person
+                    manually opening each directory,
+                    locating each file, and copying each link one by one. For over 500 documents across multiple years.
+                </p>
+                <p>
+                    The problem wasn't technical complexity — it was operational friction that didn't need to exist.
+                </p>
+
+                <h3>Design Objectives</h3>
+                <ul>
+                    <li>Eliminate manual effort from a repetitive, error-prone task</li>
+                    <li>Make the tool usable by non-technical staff with no setup or installation</li>
+                    <li>Deliver output in the format already required: a structured Excel file</li>
+                    <li>Keep the solution self-contained and deployable without backend infrastructure</li>
+                </ul>
+
+                <h3>Key Decisions</h3>
+                <h4>Decision 1 - A tool, not a process</h4>
+                <p>
+                    The initial request was for a spreadsheet. The real problem was how to produce it without consuming
+                    days of someone's time. Reframing
+                    the ask from "build a spreadsheet" to "eliminate the manual work behind it" opened the space for a
+                    better solution.
+                </p>
+                <h4>Decision 2 - Zero friction for the end user</h4>
+                <p>
+                    The person using this tool is not technical. Any solution that required installation, configuration,
+                    or command-line interaction would
+                    have failed regardless of how well it worked. The constraint wasn't technical — it was adoption.
+                </p>
+                <h4>Decision 3 - Output in the format already required</h4>
+                <p>
+                    Rather than introducing a new format or workflow, the tool outputs exactly what was requested: a
+                    structured Excel file. Meeting the
+                    existing requirement removed any need to negotiate the deliverable.
+                </p>
+                <h4>Decision 4 - Scope containment</h4>
+                <p>
+                    With no budget, no backend, and no IT support available, the solution had to be self-contained.
+                    Defining what the tool would not do — no
+                    database, no login, no server-side logic — was as important as defining what it would.
+                </p>
+
+                <h3>Solution & Flow</h3>
+                <p>
+                    The tool is a single HTML file deployable to any static host. The user pastes a URL, clicks scan,
+                    and the tool handles the rest: detects
+                    the page type, traverses directories or crawls internal pages, extracts every PDF link, and presents
+                    results with a year filter. Export
+                    generates a .xlsx file with four columns — year, folder, filename, and download URL — ready to be
+                    handed off or imported directly.
+                </p>
+                <p>
+                    A real-time log shows progress during the scan, which builds confidence for users who aren't sure
+                    what's happening in the background.
+                </p>
+
+                <h3>Results and Learnings</h3>
+                <h4>Results</h4>
+                <p>
+                <ul>
+                    <li>Task reduced from an estimated 2–3 days of manual work to under 5 minutes</li>
+
+                    <li>Usable by non-technical staff with no setup required</li>
+
+                    <li>Delivered within a single working session from problem identification to production</li>
+                </ul>
+                </p>
+                <h4>Learnings</h4>
+                <p>
+                <ul>
+                    <li>In resource-constrained public sector environments, the most valuable design skill is knowing
+                        how to scope a problem so that a
+                        real solution is actually viable</li>
+                    <li>Correctly identifying this as a workflow problem — not a data problem — was the decision that
+                        made everything else possible</li>
+                    <li>Using Claude (Anthropic) as a development agent allowed me to stay focused on product decisions
+                        while accelerating execution,
+                        which is increasingly part of how a Staff Designer operates</li>
+                </ul>
+                </p>
+
+                <h3>Role</h3>
+                <p>
+                    Product design, solution architecture, and AI-assisted front-end development.
+                </p>
+                <p>
+                    I identified the problem, defined the constraints, made all product and UX decisions, and directed
+                    the implementation using Claude as a
+                    development agent. The entire project — from first conversation to deployed tool — was completed in
+                    a single session.
+                </p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <h3>Gallery</h3>
+                <div class="bento-grid">
+                    <div class="bento-item wide">
+                        <img src="./img/pdfexport/home1.webp" alt="Home" loading="lazy">
+                    </div>
+                    <div class="bento-item">
+                        <img src="img/pdfexport/home-2.webp" alt="Start Scanning" loading="lazy">
+                    </div>
+                    <div class="bento-item tall">
+                        <img src="img/pdfexport/result_html.webp" alt="Result of scanning" loading="lazy">
+                    </div>
+                    <div class="bento-item">
+                    </div>
+                </div>
+                <video controls style="width: 100%; height: auto; display: block;">
+                    <source src="img/pdfexport/pdfexport_video_demo.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+
+                <!-- Modal Container -->
+                <div id="image-modal" class="modal">
+                    <span class="close-modal">&times;</span>
+                    <img class="modal-content" id="modal-img">
+                </div>
+
+                <a href="index.html#projects" class="cta-button" style="margin-top: 2rem;">Back to Projects</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Francisco Fernández. All rights reserved.</p>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+
+</html>

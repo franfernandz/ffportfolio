@@ -150,6 +150,7 @@ main {
     /* Reduced padding from 4rem to 2rem */
     box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.1);
     /* Slight shadow to separate layers */
+    z-index: 1;
 }
 
 .project-detail-section {
@@ -182,6 +183,8 @@ main {
 .spacer {
     /* Spacers are just visual breaks, keep them simple */
     justify-content: center;
+    position: relative !important;
+    top: auto !important;
 }
 
 /* Content Styling */
@@ -221,8 +224,28 @@ h4 {
     margin: 0 auto;
 }
 
+
+
 #projects {
-    margin-bottom: 10rem;
+    min-height: 100vh;
+    margin-bottom: 100vh;
+    padding-bottom: 8rem;
+    min-height: auto;
+    height: auto;
+    
+}
+
+#home {
+    z-index:1;
+}
+#about {
+    z-index:2;
+}
+#projects {
+    z-index:3;
+}
+#contact {
+    z-index:4;
 }
 
 .projects-grid {
@@ -480,11 +503,10 @@ footer p {
     .parallax-section.spacer.light-bg,
     .parallax-section.spacer.dark-bg {
         display: none;
+        z-index: 5;
     }
 
     /* Projects */
-
-    #projects {}
 
     .projects-grid {
         gap: 2rem;
