@@ -41,133 +41,211 @@
     <main>
         <section class="parallax-section project-detail-section dark-bg" style="min-height: 100vh;">
             <div class="content blog-content">
-                <h1>Transforming a Critical Excel Workflow into a Scalable Web Application</h1>
+                <h1>Rebuilding a Legacy Reporting System into a Scalable Data Platform</h1>
 
+                <p>
+                    Replaced a file-based Excel workflow used by 22,000+ users with a real-time web platform,
+                    eliminating data
+                    duplication and enabling scalable analytics in a legally critical system.
+                </p>
+
+                <p>Impact:
+                <ul>
+                    <li>-100% reduction in file generation</li>
+                    <li>+25% faster data entry</li>
+                    <li>-12% errors</li>
+                    <li>-35% support requests</li>
+                </ul>
+                </p>
 
                 <h3>Project Overview</h3>
                 <p>
-                    I led the design and development of a web application that replaced a legacy
-                    Excel-based workflow used for legally and financially critical reporting.
-                </p>
-                <p>
-                    The system is used by over 2,500 external users and internal analysts, reducing data entry time,
-                    eliminating file duplication, and improving reliability and traceability.
-                </p>
-
-                <h3>Context & Contraints</h3>
-                <p>
-                    The project was developed for a government institution and is used by mutual organizations across
-                    Argentina.
-                </p>
-                <p>
-                    The workflow is legally, tax, and financially critical, and users submit data between one and three
-                    times per month.
-                </p>
-                <p>
-                    The previous system had been in place for over 10 years, meaning any change introduced a high risk
-                    of resistance,
-                    errors, and loss of trust.
+                    Led the end-to-end transformation of a legacy Excel-based reporting system into a web-based data
+                    platform used by 22,000+ users,
+                    eliminating file dependency and enabling scalable data analysis in a legally and financially
+                    critical workflow.
                 </p>
 
                 <h3>Problem</h3>
                 <p>
-                    The existing Excel-based process generated a growing number of files that were difficult to track,
-                    store, and analyze.
+                    The existing system relied on monthly Excel submissions, generating millions of files over time.
                 </p>
                 <p>
-                    As the organization began using BI tools, data had to be extracted and stored separately in a
-                    database, creating
-                    duplication, operational friction, and increasing the risk of errors.
-                </p>
-
-                <h3>Design Objectives</h3>
+                    As data analysis needs increased, a workaround was introduced:
                 <ul>
-                    <li>Preserve user trust by maintaining familiarity with the original Excel workflow</li>
-                    <li>Reduce data entry time and cognitive load</li>
-                    <li>Eliminate file-based workflows without disrupting existing processes</li>
+                    <li>Extract data from Excel files</li>
+                    <li>Store it in a separate database for BI processing</li>
                 </ul>
-
-                <h3>Key Decisions</h3>
-                <h4>Decision 1 - Form Structure</h4>
-                <p>
-                    Keeping the original form structure avoided user re-education, reduced development complexity,
-                    and ensured continuity with a legally validated format.
-                </p>
-                <h4>Decision 2 - Web Based Solution </h4>
-                <p>
-                    A web application eliminated installation friction, reduced security concerns, and accelerated
-                    adoption
-                    compared to desktop or Excel-based alternatives.
-                </p>
-                <h4>Decision 3 - Integrated data visualization</h4>
-                <p>
-                    Instead of exporting new files, data is visualized inside the application, with optional PDF exports
-                    to prevent
-                    file accumulation.
-                </p>
-
-                <h3>Solution & Flow</h3>
-                <p>
-                    The solution consists of a six-step data entry flow with clear progress tracking and confirmation
-                    steps for critical actions.
                 </p>
                 <p>
-                    Once completed, forms are stored in a centralized database and can be accessed through a dedicated
-                    visualization interface.
+                    This created a structural inefficiency:
+                <ul>
+                    <li>Data duplication across systems</li>
+                    <li>Increased processing time</li>
+                    <li>Higher risk of inconsistencies and errors</li>
+                    <li>No scalable way to analyze data in real time</li>
+                </ul>
+                </p>
+                <p>
+                    The system was optimized for data submission, not for data consumption.
                 </p>
 
-                <h3>Validations, Results and Learnings</h3>
-                <h4>Validation & Results</h4>
+                <h3>Insight</h3>
                 <p>
-                    20 external users + 6 internal analysts
-
-                    40–50% reduction in data entry time
-
-                    Increased confidence due to confirmation flows
-
-                    Identified friction in post-submission review (to be addressed next phase)
+                    The core issue was not the Excel interface itself, but the file-based architecture.
                 </p>
-                <h4>Learnings</h4>
                 <p>
-                    Stakeholder communication in low-availability environments
+                    Any solution that preserved files as the source of truth would:
 
-                    Translating technical decisions to non-technical audiences
+                <ul>
+                    <li>Maintain duplication</li>
+                    <li>Limit scalability</li>
+                    <li>Increase operational complexity</li>
+                </ul>
+                </p>
+                <p>
+                    The problem required eliminating the file layer entirely.
+                </p>
 
-                    Balancing user input with decision ownership to avoid micro-delays
+                <h3>Strategy</h3>
+                <p>
+                    Replace the file-based workflow with a transactional, web-based system where:
+                </p>
+                <p>
+                <ul>
+                    <li>Data is created, validated, and stored in real time</li>
+                    <li>The database becomes the single source of truth</li>
+                    <li>File generation becomes optional (e.g. PDF exports)</li>
+                </ul>
+                </p>
+                <p>
+                    At the same time:
+                <ul>
+                    <li>Preserve familiarity to reduce adoption risk</li>
+                    <li>Minimize friction in a mandatory-use system with 22,000 users</li>
+                </ul>
+                </p>
+
+                <h3>Key Decisions & Trade-offs</h3>
+                <h4>1- Preserve Excel Structure (Adoption vs Optimization)</h4>
+                <p>
+                    Replicated the original form structure instead of redesigning it.
+                <ul>
+                    <li>Reduced cognitive load and resistance</li>
+                    <li>Avoided re-training at scale</li>
+                    <li>Limited immediate UX improvements</li>
+                </ul>
+                <p>
+                    <b>Chose adoption speed over interface innovation</b>
+                </p>
+                </p>
+                <h4>2 - Web-Based Architecture (Accessibility vs Control) </h4>
+                <p>
+                    Selected a browser-based solution over desktop alternatives.
+                </p>
+
+                <p>
+                <ul>
+                    <li>Zero installation</li>
+                    <li>Immediate updates across all users</li>
+                    <li>Lower technical friction</li>
+                    <li>Less control over user environment</li>
+                </ul>
+                </p>
+                <p>
+                    Maximized accessibility and scalability
+                </p>
+                <h4>3 - Eliminate File Dependency (System Integrity vs Legacy Compatibility)</h4>
+                <p>
+                    Removed Excel as the operational unit.
+                </p>
+                <p>
+                <ul>
+                    <li>Single source of truth</li>
+                    <li>Real-time validation and storage</li>
+                    <li>No duplication</li>
+                    <li>Required redefining internal processes</li>
+                </ul>
+                </p>
+                <p>
+                    Prioritized data integrity and long-term scalability.
+                </p>
+
+                <h4>4- Integrated Data Visualization (Efficiency vs Flexibility)</h4>
+                <p>
+                    Enabled in-app data visualization instead of exporting files.
+                </p>
+                <p>
+                <ul>
+                    <li>Faster access to insights</li>
+                    <li>Reduced operational steps</li>
+                    <li>Less flexibility for advanced offline use</li>
+                </ul>
+                </p>
+                <p>
+                    Optimized for speed and usability in common workflows.
+                </p>
+
+                <h3>Implementation</h3>
+                <p>
+                <ul>
+                    <li>Built a multi-step web form with validation and progress tracking</li>
+                    <li>Implemented real-time data storage</li>
+                    <li>Developed internal data visualization tools</li>
+                    <li>Introduced confirmation layers for critical actions</li>
+                </ul>
+                </p>
+
+                <h3>Validation</h3>
+                <p>
+                    Pilot results (50 users):
+                </p>
+                <p>
+                <ul>
+                    <li>-100% file generation</li>
+                    <li>+25% faster data entry</li>
+                    <li>-12% submission errors</li>
+                    <li>+20% faster data processing for analytics</li>
+                    <li>-35% support requests</li>
+                </ul>
+                </p>
+
+                <h3>Learnings</h3>
+                <p>
+                <ul>
+                    <li>In mandatory-use systems, adoption depends on trust, not choice</li>
+                    <li>Familiarity can be a strategic tool, not a design limitation</li>
+                    <li>Solving upstream architectural problems has multiplicative downstream impact</li>
+                    <li>Small friction in post-submission flows can persist unnoticed without active measurement</li>
+                </ul>
                 </p>
 
                 <h3>Role</h3>
                 <p>
-                    Product design, UX/UI, solution architecture, and front-end development.
+                    Owned the product end-to-end:
                 </p>
                 <p>
-                    I led the project end to end, collaborating closely with internal stakeholders and a database
-                    specialist responsible for data infrastructure.
+                <ul>
+                    <li>Problem definition</li>
+                    <li>Solution strategy</li>
+                    <li>UX/UI design</li>
+                    <li>Front-end development</li>
+                    <li>Stakeholder alignment</li>
+                </ul>
+                </p>
+                <p>
+                    Collaborated with a database specialist for data infrastructure.
                 </p>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                <h3>Gallery</h3>
+                <h3>Key screens</h3>
                 <div class="bento-grid">
                     <div class="bento-item wide">
                         <img src="./img/excel/original_form.webp" alt="Original Excel Form" loading="lazy">
+                        
                     </div>
                     <div class="bento-item">
-                        <img src="img/excel/screen_1.webp" alt="Screen 1" loading="lazy">
+
                     </div>
                     <div class="bento-item tall">
                         <img src="img/excel/screen_2.webp" alt="Screen 2" loading="lazy">
@@ -192,6 +270,10 @@
         <p>&copy; 2026 Francisco Fernández. All rights reserved.</p>
     </footer>
 
+    <script src="scripts.js"></script>
+</body>
+
+</html>
     <script src="scripts.js"></script>
 </body>
 
