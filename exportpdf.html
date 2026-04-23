@@ -41,129 +41,173 @@
     <main>
         <section class="parallax-section project-detail-section dark-bg" style="min-height: 100vh;">
             <div class="content blog-content">
-                <h1>Automating a Manual Document Indexing Task with a Browser-Based Scraping Tool</h1>
+                <h1>Automating a Manual Document Indexing Workflow into a Self-Service Tool</h1>
+
+                <p>
+                    Replaced a manual document indexing process with a zero-installation browser tool, reducing a 2–3
+                    day task to under 5 minutes and enabling non-technical staff to generate structured datasets on
+                    demand.
+                </p>
+                <p>
+                    Impact:
+                <ul>
+                    <li>Reduced task time from days to minutes</li>
+                    <li>Eliminated manual data entry errors</li>
+                    <li>Enabled self-service access for non-technical users</li>
+                    <li>Delivered end-to-end solution in a single iteration</li>
+                </ul>
+                </p>
 
 
                 <h3>Project Overview</h3>
                 <p>
-                    I designed and built a browser-based tool that automatically crawls government document directories
-                    and exports a structured Excel
-                    spreadsheet with all PDF download links — reducing a task that would have taken days to minutes.
-                </p>
-
-                <h3>Context & Contraints</h3>
-                <p>
-                    The project was developed for a national government institute that publishes hundreds of official
-                    legal documents on its public website,
-                    organized by document type across multiple directories. The archive has grown over several years to
-                    more than 500 files.
+                    Led the design and development of a lightweight, browser-based tool to automate document indexing
+                    across a
+                    fragmented public archive, without requiring changes to existing infrastructure.
                 </p>
                 <p>
-                    No internal document management system exists for this archive. Files live on a public web server
-                    with no structured index or database
-                    behind them.
-                </p>
-                <p>
-                    The solution had to work without modifying the existing server infrastructure, without requiring
-                    installation or technical knowledge
-                    from the end user, and without a dedicated budget or development team.
+                    The solution transformed a one-off operational request into a reusable internal capability.
                 </p>
 
                 <h3>Problem</h3>
                 <p>
-                    A request came in to build an Excel spreadsheet mapping every document's title, year, and download
-                    URL — to feed a future national
-                    database. With no existing tool to automate this, the task would have fallen to a single person
-                    manually opening each directory,
-                    locating each file, and copying each link one by one. For over 500 documents across multiple years.
+                    A request was made to manually compile an Excel file containing metadata and download links for
+                    500+ government documents distributed across multiple directories.
                 </p>
                 <p>
-                    The problem wasn't technical complexity — it was operational friction that didn't need to exist.
-                </p>
-
-                <h3>Design Objectives</h3>
+                    The existing process required:
                 <ul>
-                    <li>Eliminate manual effort from a repetitive, error-prone task</li>
-                    <li>Make the tool usable by non-technical staff with no setup or installation</li>
-                    <li>Deliver output in the format already required: a structured Excel file</li>
-                    <li>Keep the solution self-contained and deployable without backend infrastructure</li>
-                </ul>
-
-                <h3>Key Decisions</h3>
-                <h4>Decision 1 - A tool, not a process</h4>
-                <p>
-                    The initial request was for a spreadsheet. The real problem was how to produce it without consuming
-                    days of someone's time. Reframing
-                    the ask from "build a spreadsheet" to "eliminate the manual work behind it" opened the space for a
-                    better solution.
-                </p>
-                <h4>Decision 2 - Zero friction for the end user</h4>
-                <p>
-                    The person using this tool is not technical. Any solution that required installation, configuration,
-                    or command-line interaction would
-                    have failed regardless of how well it worked. The constraint wasn't technical — it was adoption.
-                </p>
-                <h4>Decision 3 - Output in the format already required</h4>
-                <p>
-                    Rather than introducing a new format or workflow, the tool outputs exactly what was requested: a
-                    structured Excel file. Meeting the
-                    existing requirement removed any need to negotiate the deliverable.
-                </p>
-                <h4>Decision 4 - Scope containment</h4>
-                <p>
-                    With no budget, no backend, and no IT support available, the solution had to be self-contained.
-                    Defining what the tool would not do — no
-                    database, no login, no server-side logic — was as important as defining what it would.
-                </p>
-
-                <h3>Solution & Flow</h3>
-                <p>
-                    The tool is a single HTML file deployable to any static host. The user pastes a URL, clicks scan,
-                    and the tool handles the rest: detects
-                    the page type, traverses directories or crawls internal pages, extracts every PDF link, and presents
-                    results with a year filter. Export
-                    generates a .xlsx file with four columns — year, folder, filename, and download URL — ready to be
-                    handed off or imported directly.
-                </p>
-                <p>
-                    A real-time log shows progress during the scan, which builds confidence for users who aren't sure
-                    what's happening in the background.
-                </p>
-
-                <h3>Results and Learnings</h3>
-                <h4>Results</h4>
-                <p>
-                <ul>
-                    <li>Task reduced from an estimated 2–3 days of manual work to under 5 minutes</li>
-
-                    <li>Usable by non-technical staff with no setup required</li>
-
-                    <li>Delivered within a single working session from problem identification to production</li>
+                    <li>Navigating multiple pages</li>
+                    <li>Manually identifying documents</li>
+                    <li>Copying links and metadata one by one</li>
+                    <li>Compiling an Excel file</li>
                 </ul>
                 </p>
-                <h4>Learnings</h4>
+                <p>
+                    This created:
+                <ul>
+                    <li>High time cost (multiple days of work)</li>
+                    <li>High risk of human error</li>
+                    <li>No reusable system for future updates</li>
+                </ul>
+                </p>
+
+                <h3>Insight</h3>
+                <p>
+                    The request was framed as a data delivery task, but the real problem was a repeatable workflow with
+                    no tooling.
+                </p>
+                <p>
+                    Any manual solution would:
+                <ul>
+                    <li>Solve the immediate need</li>
+                    <li>Fail to scale for future updates</li>
+                    <li>Reintroduce the same cost over time</li>
+                </ul>
+                </p>
+
+                <h3>Strategy</h3>
+                <p>
+                    Transform a one-time request into a self-service tool that:
+                </p>
                 <p>
                 <ul>
-                    <li>In resource-constrained public sector environments, the most valuable design skill is knowing
-                        how to scope a problem so that a
-                        real solution is actually viable</li>
-                    <li>Correctly identifying this as a workflow problem — not a data problem — was the decision that
-                        made everything else possible</li>
-                    <li>Using Claude (Anthropic) as a development agent allowed me to stay focused on product decisions
-                        while accelerating execution,
-                        which is increasingly part of how a Staff Designer operates</li>
+                    <li>Automates document discovery and extraction</li>
+                    <li>Requires zero technical setup</li>
+                    <li>Outputs data in the required format (Excel)</li>
+                    <li>Operates entirely on the client side</li>
+                </ul>
+                </p>
+
+                <h3>Key Decisions & Trade-offs</h3>
+                <h4>1- Zero-Installation Architecture (Adoption vs Capability)</h4>
+                <p>
+                    Delivered as a single browser-based tool.
+                <ul>
+                    <li>No installation or setup required</li>
+                    <li>Accessible to non-technical users</li>
+                    <li>Limited by browser execution constraints</li>
+                </ul>
+                </p>
+                <p>
+                    Prioritized usability over technical flexibility
+                </p>
+                <h4>2- Output Compatibility (Speed vs System Evolution)</h4>
+                <p>
+                    Maintained Excel as output format.
+                <ul>
+                    <li>Immediate compatibility with existing workflows</li>
+                    <li>No need for stakeholder alignment</li>
+                    <li>Does not push toward more scalable data systems</li>
+                </ul>
+                </p>
+                <p>
+                    Prioritized delivery speed over long-term data standardization
+                </p>
+                <h4>3- No Backend / Self-Contained (Scope vs Extensibility)</h4>
+                <p>
+                <ul>
+                    <li>No infrastructure dependencies</li>
+                    <li>Instant deployment</li>
+                    <li>No persistence or historical tracking</li>
+                </ul>
+                </p>
+                <p>
+                    Prioritized feasibility within constraints
+                </p>
+                <h4>4- Reframing the Request (Execution vs Product Thinking)</h4>
+                <p>
+                <ul>
+                    <li>Shifted from “produce a file”s</li>
+                    <li>To “eliminate the need to manually produce it”</li>
+                </ul>
+                </p>
+                <p>
+                    Turned a task into a capability
+                </p>
+
+                <h3>Implementation</h3>
+                <p>
+                <ul>
+                    <li>Built a client-side crawling tool (HTML + JS) using an AI Agent for fast development</li>
+                    <li>Automated directory traversal and PDF detection</li>
+                    <li>Structured extracted data into tabular format</li>
+                    <li>Enabled one-click export to .xlsx</li>
+                    <li>Added real-time logging to increase user trust during execution</li>
+                </ul>
+                </p>
+
+                <h3>Validation</h3>
+                <p>
+                <ul>
+                    <li>Task reduced from 2–3 days to under 5 minutes</li>
+                    <li>Successfully used by non-technical staff without guidance</li>
+                    <li>Eliminated need for repeated manual effort</li>
+                </ul>
+                </p>
+
+                <h3>Learnings</h3>
+                <p>
+                <ul>
+                    <li>Reframing the problem is often higher leverage than optimizing execution</li>
+                    <li>In constrained environments, scope definition is the primary design tool</li>
+                    <li>Not every solution needs to scale technically — some need to scale operationally</li>
+                    <li>AI-assisted development can accelerate execution without reducing product ownership</li>
                 </ul>
                 </p>
 
                 <h3>Role</h3>
                 <p>
-                    Product design, solution architecture, and AI-assisted front-end development.
+                    Owned the solution end-to-end:
+                <ul>
+                    <li>Problem framing</li>
+                    <li>Strategy and decision-making</li>
+                    <li>UX definition</li>
+                    <li>Implementation direction (AI-assisted development)</li>
+                </ul>
                 </p>
                 <p>
-                    I identified the problem, defined the constraints, made all product and UX decisions, and directed
-                    the implementation using Claude as a
-                    development agent. The entire project — from first conversation to deployed tool — was completed in
-                    a single session.
+                    Delivered from initial request to usable product within a single working session.
                 </p>
 
 
@@ -207,8 +251,9 @@
 
                 <a href="index.html#projects" class="cta-button" style="margin-top: 2rem;">Back to Projects</a>
             </div>
-            <a href="https://lpdfe.netlify.app/" target="_blank" class="cta-button" style="margin-top: 2rem;">Live Preview</a>
-            <a href="https://github.com/franfernandz/scrapdf" target="_blank" class="cta-button" style="margin-top: 2rem;">GitHub Repository</a>
+            <a href="https://lpdfe.netlify.app/" target="_blank" class="cta-button" style="margin-top: 2rem;">Live
+                Preview</a>
+
         </section>
     </main>
 
