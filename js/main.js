@@ -50,68 +50,70 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // 2. Contact Form Handling
-    const contactForm = document.getElementById("contact-form");
-    const formStatus = document.getElementById("form-status");
+   const contactForm = document.getElementById("contact-form");
+const formStatus = document.getElementById("form-status");
 
-    if (contactForm) {
-        contactForm.addEventListener("submit", async (e) => {
-            e.preventDefault();
-            const submitBtn = contactForm.querySelector('button[type="submit"]');
-            
-            // Visual feedback - loading state
-            if (submitBtn) submitBtn.disabled = true;
-            if (formStatus) {
-                formStatus.className = "form-status info";
-                formStatus.textContent = currentLang === "es" ? "Enviando..." : "Sending...";
-            }
+if (contactForm) {
+    contactForm.addEventListener("submit", async (e) => {
+        e.preventDefault();
 
+        const submitBtn = contactForm.querySelector(
+            'button[type="submit"]'
+        );
+
+        if (submitBtn) {
+            submitBtn.disabled = true;
+        }
+
+        if (formStatus) {
+            formStatus.className = "form-status info";
+            formStatus.textContent =
+                currentLang === "es"
+                    ? "Enviando..."
+                    : "Sending...";
+        }
+
+        try {
             const formData = new FormData(contactForm);
-            
-            const key = "YOUR_ACCESS_KEY_HERE"; // User should replace this with their Web3Forms key
-            
-            try {
-                if (key === "YOUR_ACCESS_KEY_HERE") {
-                    // Out-of-the-box demo mode: simulate API submission
-                    await new Promise(resolve => setTimeout(resolve, 1000));
-                    if (formStatus) {
-                        formStatus.className = "form-status success";
-                        formStatus.textContent = translations[currentLang]["contact-success"];
-                    }
-                    contactForm.reset();
-                } else {
-                    // Production mode: make real API request to Web3Forms
-                    const response = await fetch("https://api.web3forms.com/submit", {
-                        method: "POST",
-                        headers: {
-                            "Content-Type": "application/json",
-                            "Accept": "application/json"
-                        },
-                        body: JSON.stringify({
-                            access_key: key,
-                            name: formData.get("name"),
-                            email: formData.get("email"),
-                            message: formData.get("message")
-                        })
-                    });
 
-                    if (response.ok) {
-                        if (formStatus) {
-                            formStatus.className = "form-status success";
-                            formStatus.textContent = translations[currentLang]["contact-success"];
-                        }
-                        contactForm.reset();
-                    } else {
-                        throw new Error("Form submission failed");
-                    }
-                }
-            } catch (error) {
-                if (formStatus) {
-                    formStatus.className = "form-status error";
-                    formStatus.textContent = translations[currentLang]["contact-error"];
-                }
-            } finally {
-                if (submitBtn) submitBtn.disabled = false;
+            const response = await fetch("/", {
+                method: "POST",
+                headers: {
+                    "Content-Type":
+                        "application/x-www-form-urlencoded"
+                },
+                body: new URLSearchParams(formData).toString()
+            });
+
+            if (!response.ok) {
+                throw new Error("Error al enviar");
             }
-        });
-    }
+
+            if (formStatus) {
+                formStatus.className = "form-status success";
+                formStatus.textContent =
+                    translations[currentLang]["contact-success"];
+            }
+
+            contactForm.reset();
+
+        } catch (error) {
+
+            if (formStatus) {
+                formStatus.className = "form-status error";
+                formStatus.textContent =
+                    translations[currentLang]["contact-error"];
+            }
+
+            console.error(error);
+
+        } finally {
+
+            if (submitBtn) {
+                submitBtn.disabled = false;
+            }
+
+        }
+    });
+}
 });
