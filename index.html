@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="title">Portfolio</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <nav class="nav-container">
+            <div class="logo">Francisco Fernandez</div>
+            <ul class="nav-links">
+                <li><a href="#bio" data-i18n="nav-bio">Bio</a></li>
+                <li><a href="#projects" data-i18n="nav-projects">Proyectos</a></li>
+                <li><a href="#contact" data-i18n="nav-contact">Contacto</a></li>
+            </ul>
+            <button id="lang-toggle" class="lang-btn">EN / ES</button>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero" class="section bio-section">
+            <div class="container" style="text-align: center;">
+                <h1>Francisco Fernandez</h1>
+                <h3 style="font-family: var(--font-text); color: var(--secondary-dark);">Project Manager / AI Specialist</h3>
+            </div>
+        </section>
+        <section id="bio" class="section bio-section">
+            <div class="container">
+                <h1 data-i18n="bio-title">Sobre Mí</h1>
+                <p data-i18n="bio-text-1" class="paragraph-style">Cargando...</p>
+                <p data-i18n="bio-text-2" class="paragraph-style">Cargando...</p>
+                <p data-i18n="bio-text-3" class="paragraph-style">Cargando...</p>
+                <p data-i18n="bio-text-4" class="paragraph-style">Cargando...</p>
+                <p data-i18n="bio-text-5" class="paragraph-style">Cargando...</p>
+                <p data-i18n="bio-text-6" class="paragraph-style">Cargando...</p>
+                <p data-i18n="bio-text-7" class="paragraph-style">Cargando...</p>
+                <p data-i18n="bio-text-8" class="paragraph-style">Cargando...</p>
+                <p data-i18n="bio-text-9" class="paragraph-style">Cargando...</p>
+                <div class="cv-buttons">
+                    <a href="docs/Fernandez-Francisco-CV_Esp.pdf" target="_blank" class="cv-btn" download data-i18n="cv-download-es">Descargar CV 🇦🇷</a>
+                    <a href="docs/Fernandez-Francisco-CV_Eng.pdf" target="_blank" class="cv-btn" download data-i18n="cv-download-en">Descargar CV 🇬🇧</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="section projects-section">
+            <div class="container">
+                <h2 data-i18n="projects-title">Proyectos</h2>
+                <div class="projects-grid">
+                    <a href="inaes.html" class="project-card">
+                        <h3 data-i18n="inaes-title">INAES</h3>
+                        <p data-i18n="inaes-desc">Proyectos realizados para INAES.</p>
+                    </a>
+                    <a href="ndz-labs.html" class="project-card">
+                        <h3 data-i18n="ndz-title">NDZ Labs</h3>
+                        <p data-i18n="ndz-desc">Proyectos realizados para NDZ Labs.</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section contact-section">
+            <div class="container">
+                <h2 data-i18n="contact-title">Contacto</h2>
+                <form id="contact-form" method="POST">
+                    <div class="form-group">
+                        <label for="name" data-i18n="contact-name-label">Nombre</label>
+                        <input type="text" id="name" name="name" required data-i18n-placeholder="contact-name-placeholder" placeholder="Tu nombre">
+                    </div>
+                    <div class="form-group">
+                        <label for="email" data-i18n="contact-email-label">Email</label>
+                        <input type="email" id="email" name="email" required data-i18n-placeholder="contact-email-placeholder" placeholder="tu@email.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="message" data-i18n="contact-message-label">Mensaje</label>
+                        <textarea id="message" name="message" required data-i18n-placeholder="contact-message-placeholder" placeholder="Escribe tu mensaje aquí..."></textarea>
+                    </div>
+                    <button type="submit" data-i18n="contact-submit-btn">Enviar</button>
+                    <div id="form-status" class="form-status"></div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-col col-left">
+                <p data-i18n="footer-copyright">&copy; 2026 Francisco Fernandez. Todos los derechos reservados.</p>
+            </div>
+            <div class="footer-col col-right">
+                <ul class="footer-links">
+                    <li><a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+                    <li><a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/translations.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

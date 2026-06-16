@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="inaes-page-title">Proyectos INAES</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <nav class="nav-container">
+            <div class="logo"><a href="index.html">Francisco Fernandez</a></div>
+            <ul class="nav-links">
+                <li><a href="index.html#bio" data-i18n="nav-bio">Bio</a></li>
+                <li><a href="index.html#projects" data-i18n="nav-projects">Proyectos</a></li>
+                <li><a href="index.html#contact" data-i18n="nav-contact">Contacto</a></li>
+            </ul>
+            <button id="lang-toggle" class="lang-btn">EN / ES</button>
+        </nav>
+    </header>
+
+    <main class="page-content">
+        <section class="section subpage-header">
+            <div class="container">
+                <a href="index.html#projects" class="back-link" data-i18n="back-to-home">&larr; Volver</a>
+                <h1 data-i18n="inaes-heading">Proyectos INAES</h1>
+                <p class="subtitle" data-i18n="inaes-subheading">Detalle de proyectos desarrollados para INAES.</p>
+            </div>
+        </section>
+
+        <section class="section project-detail-section">
+            <div class="container">
+                <div class="project-detail-grid">
+                    <!-- Project 1 -->
+                    <a href="inaes-excel.html" class="project-detail-card">
+                        <div class="project-info">
+                            <span class="project-tag" data-i18n="project-tag-inaes">INAES</span>
+                            <h2 data-i18n="inaes-p1-title">Portal de Trámites Digitales</h2>
+                            <p data-i18n="inaes-p1-desc">Digitalización y optimización de flujos de trámites administrativos para cooperativas y mutuales de todo el país.</p>
+                            <div class="project-tech">
+                                <span data-i18n="project-tag-pm">Product Management</span>
+                                <span data-i18n="project-tag-dev">Development</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Project 2 -->
+                    <a href="inaes-pdf.html" class="project-detail-card">
+                        <div class="project-info">
+                            <span class="project-tag" data-i18n="project-tag-inaes">INAES</span>
+                            <h2 data-i18n="inaes-p2-title">Automatización de Indexación de Documentos</h2>
+                            <p data-i18n="inaes-p2-desc">Herramienta autogestionada que convirtió una tarea manual de días en un proceso automatizado de minutos.</p>
+                            <div class="project-tech">
+                                <span data-i18n="project-tag-pm">Product Management</span>
+                                <span data-i18n="project-tag-dev">Development</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-col col-left">
+                <p data-i18n="footer-copyright">&copy; 2026 Francisco Fernandez. Todos los derechos reservados.</p>
+            </div>
+            <div class="footer-col col-right">
+                <ul class="footer-links">
+                    <li><a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+                    <li><a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/translations.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
